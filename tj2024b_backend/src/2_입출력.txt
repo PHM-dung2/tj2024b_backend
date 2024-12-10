@@ -1,0 +1,22 @@
+
+
+
+[ 콘솔 입력 ]
+	1. 준비물 : Scanner scan = new Scanner(System.in);
+		- 입력객체 생성시 주의할점 : class파일의 1개만 존재해도 여러번 입력받을 수 있다.
+			-> 
+			-> inport란 다른 패키지/폴더의 클래스를 가져온다는 뜻
+			
+	2. 사용 : scan.nextXXX()
+		- 입력함수 종류
+			.next() , .nextLine() , .nextByte() ,
+			.nextShort() , .nextInt() , .nextLong() ,
+			.nextFloat() , .nextDouble()
+			
+	3. 주의할점
+		1. .nextLine() 은 행(엔터)까지 포함해서 인식함으로 nextLine() 앞에 다른 nextXXX() 존재하면 하나로 인식된다.
+			- 해결방법 : 의미없는 scan.nextLine() 중간에 작성하므로 구분 만들기.
+			
+		2. InputMismatchException : 입력함수 반호나타입과 키보드로부터 입력한 데이터가 허용범위 벗어남
+			- 해결방법 : 코드에 입력한 입력함수 반환타입에 맞게 키보드로부터 데이터를 잘(타입에 맞게) 입력한다.
+		
