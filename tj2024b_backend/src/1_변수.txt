@@ -67,6 +67,19 @@
  		- 1. 메모리 크기가 작은 것 부터 큰 순으로 변환
  		- 2. 데이터의 손실이 없다.
  		- 3. 연산(계산) 중에 큰 값으로 변환된다.(메모리 손실
- 	
+		- byte -> short , char -> int -> long -> float -> double 
+		+ 연산중에 묵시적 형변환  , 연산시 피연산자중에 더 큰 타입으로 결과를 반환한다.
+			byte + byte => int	, 예외] byte와 short 연산 결과는 무조건 int로 반환된다.
+			byte + short => int 	, 
+			int + int => int 
+			int + long => long 
+			int + float => float 
+			float + double => double 
+			
+	2. 강제 타입 변환 , 명시적 형 변환 , 캐스팅 
+		- 1. 메모리 크기가 큰것 부터 작은 순으로 변환 
+		- 2. 데이터의 (허용범위 외)손실이 있을수도 있다.
+		- 3. (변환할타입명)변수명 , (변환할타입명)리터럴값
+		- double -> float -> long -> int -> short , char -> byte
  	
 	
