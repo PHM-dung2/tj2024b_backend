@@ -105,17 +105,61 @@ public class 추가문제 {
 //			    문제12:  중간고사, 기말고사, 수행평가를 입력받아 반영비율별 계산하여 소수 둘째자리까지 총점수 출력하시오
 //			        계산식 반영비율)  중간고사 반영비율 => 30 %  / 기말고사 반영비율 => 30 %   / 수행평가 반영비율 => 40 %
 				
-				
+//				System.out.print("[문제12] 중간고사 : ");
+//				double 중간고사 = sc.nextDouble() * 0.3;
+//				System.out.print("[문제12] 기말고사 : ");
+//				double 기말고사 = sc.nextDouble() * 0.3;
+//				System.out.print("[문제12] 수행평가 : ");
+//				double 수행평가 = sc.nextDouble() * 0.4;
+//				double 총점수 = 중간고사 + 기말고사 + 수행평가;
+//				System.out.printf("[문제12] 총점수 : %.2f" , 총점수 );
 				
 //			    문제13 :  연산 순서 나열 하고 printf() 에 출력되는 x 와 y 값을 예측하시오.
 //			        int x = 10;
 //			        int y = x-- + 5 + --x;
 //			        printf(" x의 값 : %d , y의값 :  %d ", x, y)
+				
+//				x = 8 , y = 23
+				
 //			    문제14 : 나이를 입력받아 나이가 10세이상이면 학생 , 20세이상이면 성인 , 40세이상이면 중년 으로 출력하기
+				
+//				System.out.print("[문제14] 나이 : ");
+//				int age = sc.nextInt();
+//				String result7 = age >= 40 ? "중년" : age >= 20 ? "성인" : age >= 10 ? "학생" : "" ;
+//				System.out.println("[문제14 결과 : " + result7);
+				
 //			    문제15 : 국어 , 영어 , 수학 점수를 입력받아 각 변수에 저장하고 총점(소수점 0자리) 출력 , 평균(소수점 2자리 까지) 출력
+				
+//				System.out.print("[문제15] 국어 점수 : ");
+//				int 국어 = sc.nextInt();
+//				System.out.print("[문제15] 영어 점수 : ");
+//				int 영어 = sc.nextInt();
+//				System.out.print("[문제15] 수학 점수 : ");
+//				int 수학 = sc.nextInt();
+//				double 총점 = 국어 + 영어 + 수학;
+//				double 평균 = 총점 / 3;
+//				System.out.printf("[문제15] 총점 : %.0f , 평균 : %.2f " , 총점 , 평균);
+				
 //			    문제16 : 3개의 정수형으로 입력받아 가장 큰수 출력하시오. [ 같은 입력 값을 배제 ]
+				
+//				System.out.print("[문제16] 정수1 : ");
+//				int 정수1 = sc.nextInt();
+//				System.out.print("[문제16] 정수2 : ");
+//				int 정수2 = sc.nextInt();
+//				System.out.print("[문제16] 정수3 : ");
+//				int 정수3 = sc.nextInt();
+//				int 큰수 = 정수1 > 정수2 && 정수1 > 정수3 ? 정수1 : 정수2 > 정수1 && 정수2 > 정수3 ? 정수2 : 정수3;
+//				System.out.println(큰수);
+				
 //			    문제17 : 아이디[문자열] 와 비밀번호[문자열] 를 입력받아 아이디가 'admin' 이고 비밀번호가 '1234' 와 일치하면 '로그인성공' 아니면 '로그인실패' 출력 하시오
 		
+//				System.out.print("[문제17] 아이디 : ");
+//				String id = sc.nextLine();
+//				System.out.print("[문제17] 비밀번호 : ");
+//				String pw = sc.nextLine();
+//				String result8 = (id.equals("admin") && pw.equals("1234") ) ? "로그인성공" : "로그인실패";
+//				System.out.println( result8 );
+				
 	}
 
 }
