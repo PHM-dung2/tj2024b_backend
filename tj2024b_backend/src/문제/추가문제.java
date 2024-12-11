@@ -67,16 +67,46 @@ public class 추가문제 {
 //			    문제8 : 사다리꼴 넓이 구하기[윗변과 밑변 높이를 입력받아 출력하기 , 소수점 첫째 자리까지 출력하시오.
 //			        계산식) 사다리꼴 계산식 = > (윗변 + 밑변) * 높이 / 2
 				
-				
+//				System.out.print("[문제8] 윗변 : ");
+//				double 윗변 = sc.nextDouble();
+//				System.out.print("[문제8] 밑변 : ");
+//				double 밑변 = sc.nextDouble();
+//				System.out.print("[문제8] 높이 : ");
+//				double 높이 = sc.nextDouble();
+//				double 사다리꼴넓이 = (윗변 + 밑변) * 높이 / 2;
+//				System.out.printf("[문제8] 사다리꼴 넓이 : %.1f" , 사다리꼴넓이);
 				
 //			    문제9 : 키를 정수를 입력받아 표준체중 출력하기 , 정수형으로 출력하시오.
 //			        계산식) 표준체중 계산식 = > (키 - 100) * 0.9
+				
+//				System.out.print("[문제9] 키1 : ");
+//				int 키1 = sc.nextInt();
+//				double 표준체중 = (키1 - 100) * 0.9;
+//				System.out.println("[문제9] 표준체중 : " + (int)표준체중);
+				
 //			    문제10 : 키와 몸무게를 입력받아 BMI 출력하기 , 소수점 둘째 자리 까지 출력하시오.
 //			        계산식) BMI 계산식 = > 몸무게 / ((키 / 100) * (키 / 100))
+				
+//				System.out.print("[문제10] 키2 : ");
+//				double 키2 = sc.nextDouble();
+//				System.out.print("[문제10] 몸무게 : ");
+//				double 몸무게 = sc.nextDouble();
+//				double bmi = 몸무게 / ((키2 / 100) * (키2 / 100));
+//				System.out.printf("[문제10] BMI : %.2f" , bmi);
+				
 //			    문제11 : inch 를 입력받아 cm 로 변환하기  , 소수점 둘째 자리까지 출력하시오.
 //			        계산식) 1 inch -> 2.54cm
+				
+//				System.out.print("[문제11] inch : ");
+//				int inch = sc.nextInt();
+//				double cm = inch * 2.54;
+//				System.out.printf("[문제11] " + inch + " inch : %.2fcm" , cm);
+				
 //			    문제12:  중간고사, 기말고사, 수행평가를 입력받아 반영비율별 계산하여 소수 둘째자리까지 총점수 출력하시오
 //			        계산식 반영비율)  중간고사 반영비율 => 30 %  / 기말고사 반영비율 => 30 %   / 수행평가 반영비율 => 40 %
+				
+				
+				
 //			    문제13 :  연산 순서 나열 하고 printf() 에 출력되는 x 와 y 값을 예측하시오.
 //			        int x = 10;
 //			        int y = x-- + 5 + --x;
