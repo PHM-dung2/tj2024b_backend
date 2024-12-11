@@ -10,10 +10,10 @@ public class 추가문제 {
 //			    문제1 : 하나의 정수형으로 정수를 입력받아 입력받은 값이 7의 배수 이면 'O' 아니면 'X' 출력 하시오.
 		
 				Scanner sc = new Scanner(System.in);
-				System.out.print("[문제1] 정수1 : ");
-				int 정수1 = sc.nextInt();
-				char result1 = 정수1 % 7 == 0 ? 'O' : 'X';
-				System.out.println("[문제1] 결과1 : " + result1);
+//				System.out.print("[문제1] 정수1 : ");
+//				int 정수1 = sc.nextInt();
+//				char result1 = 정수1 % 7 == 0 ? 'O' : 'X';
+//				System.out.println("[문제1] 결과1 : " + result1);
 
 //			    문제2 : 하나의 정수형으로 정수를 입력받아 입력받은 값이 홀수 이면 'O' 아니면 'X' 출력 하시오.
 				
