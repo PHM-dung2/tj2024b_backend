@@ -8,10 +8,10 @@ public class 알람시계 {
 		
 //		1시간 이상도 가능한 코드
 		Scanner sc = new Scanner(System.in);
-		final int alertM = -45;
+		final int ALERTM = -45;
 		
 		int h = sc.nextInt(); 
-		int m = sc.nextInt() + alertM;
+		int m = sc.nextInt() + ALERTM;
 		
 		if( m < 0 && h == 0 ) { h = 24; }
 		
@@ -24,8 +24,9 @@ public class 알람시계 {
 		System.out.println(tH + " " + tM);
 	
 //		Scanner sc = new Scanner(System.in);
+//		final int ALERTM = -45;
 //		int h = sc.nextInt(); 
-//		int m = sc.nextInt()-45;
+//		int m = sc.nextInt() + ALERTM;
 //		
 //		if( m < 0 ) {
 //			m += 60;
@@ -33,7 +34,7 @@ public class 알람시계 {
 //				h = 23;
 //			}else { h--;}
 //		}
-//		System.out.println(h+" "+m);
+		System.out.println(h+" "+m);
 	}
 
 }
