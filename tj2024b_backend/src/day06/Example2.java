@@ -35,15 +35,15 @@ public class Example2 {
 	int choose = sc.nextInt(); 
 	
 		if( choose == 1 ) {	
-			if( count1 < 0 ) { System.out.println("재고가 부족합니다"); }
+			if( count1 < 1 ) { System.out.println("재고가 부족합니다"); }
 			else { count1--; }
 			}
 		if( choose == 2 ) {	
-			if( count2 < 0 ) { System.out.println("재고가 부족합니다"); }
+			if( count2 < 1 ) { System.out.println("재고가 부족합니다"); }
 			else { count2--; }
 			}
 		if( choose == 3 ) {	
-			if( count3 < 0 ) { System.out.println("재고가 부족합니다"); }
+			if( count3 < 1 ) { System.out.println("재고가 부족합니다"); }
 			else { count3--; }
 			}
 		
