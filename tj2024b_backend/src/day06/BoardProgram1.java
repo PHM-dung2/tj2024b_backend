@@ -40,7 +40,6 @@ public class BoardProgram1 { // class start // 자바 모든 코드는 class안�
 				else if( 제목2 == null ) { 제목2 = title; 내용2 = content; 작성자2 = writer; }
 				else if( 제목3 == null ) { 제목3 = title; 내용3 = content; 작성자3 = writer; }
 				else { System.out.println("** 등록 실패 : 게시물 작성공간이 부족합니다. **"); } // 그외,
-				제목1 = title; 내용1 = content; 작성자1 = writer;				// - while 밖 변수에 입력받은 3개의 문자열을 각각 저장.
 				System.out.println("** 등록 성공 **");
 			} // if end
 			else if(선택메뉴 == 2) { 
