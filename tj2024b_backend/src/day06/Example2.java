@@ -38,12 +38,14 @@ public class Example2 {
 			if( count1 < 0 ) { System.out.println("재고가 부족합니다"); }
 			else { count1--; }
 			}
-		
-		if( choose == 2 ) {	count2--; }
-		if( count2 < 0 ) { System.out.println("재고가 부족합니다"); }
-		
-		if( choose == 3 ) {	count3--; }
-		if( count3 < 0 ) { System.out.println("재고가 부족합니다"); }
+		if( choose == 2 ) {	
+			if( count2 < 0 ) { System.out.println("재고가 부족합니다"); }
+			else { count2--; }
+			}
+		if( choose == 3 ) {	
+			if( count3 < 0 ) { System.out.println("재고가 부족합니다"); }
+			else { count3--; }
+			}
 		
 		if( choose == 4 ) {
 			int price = (1000 * (10-count1)) + (1500 * (10-count2)) + (2000 * (10-count3));
