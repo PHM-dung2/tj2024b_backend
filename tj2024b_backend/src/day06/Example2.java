@@ -36,15 +36,15 @@ public class Example2 {
 	
 		if( choose == 1 ) {	
 			if( count1 < 1 ) { System.out.println("재고가 부족합니다"); }
-			else { count1--; }
+			else { count1--; System.out.println("콜라 선택 했습니다"); }
 			}
 		if( choose == 2 ) {	
 			if( count2 < 1 ) { System.out.println("재고가 부족합니다"); }
-			else { count2--; }
+			else { count2--; System.out.println("사이다 선택 했습니다"); }
 			}
 		if( choose == 3 ) {	
 			if( count3 < 1 ) { System.out.println("재고가 부족합니다"); }
-			else { count3--; }
+			else { count3--; System.out.println("환타 선택 했습니다"); }
 			}
 		
 		if( choose == 4 ) {

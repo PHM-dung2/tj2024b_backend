@@ -24,9 +24,9 @@ import java.util.Scanner;
 public class Example2답 {
 
 	public static void main(String[] args) {
-	int count1 = 10;
-	int count2 = 10;
-	int count3 = 10;
+	int 콜라재고 = 10;		int 사이다재고 = 10;	int 환타재고 = 10;
+	int 콜라바구니 = 0;		int 사이다바구니 = 0;	int 환타바구니 = 0;
+	int 콜라가격 = 1000;	int 사이다가격 = 1500;	int 환타가격 = 2000;
 		
 	while(true) {
 		Scanner sc = new Scanner(System.in);
@@ -34,13 +34,10 @@ public class Example2답 {
 		int choose = sc.nextInt(); 
 	
 		if( choose == 1 ) {	--count1; }
-		else if( count1 < 0 ) { System.out.println("재고가 부족합니다"); }
 		
 		if( choose == 2 ) {	--count2; }
-		else if( count2 < 0 ) { System.out.println("재고가 부족합니다"); }
 		
 		if( choose == 3 ) {	--count3; }
-		else if( count3 < 0 ) { System.out.println("재고가 부족합니다"); }
 		
 		if( choose == 4 ) {
 			int price = (1000 * (10-count1)) + (1500 * (10-count2)) + (2000 * (10-count3));
