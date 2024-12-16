@@ -21,29 +21,26 @@ import java.util.Scanner;
 */
 
 
-public class Example2 {
+public class Example2답 {
 
 	public static void main(String[] args) {
-	Scanner sc = new Scanner(System.in);
 	int count1 = 10;
 	int count2 = 10;
 	int count3 = 10;
 		
 	while(true) {
-	System.out.println("===== 메뉴 =====");
-	System.out.print("1.콜라 2.사이다 3.환타 4.결제 ");
-	int choose = sc.nextInt(); 
+		Scanner sc = new Scanner(System.in);
+		System.out.print(">>> 1.콜라 2.사이다 3.환타 4.결제 ");
+		int choose = sc.nextInt(); 
 	
-		if( choose == 1 ) {	
-			if( count1 < 0 ) { System.out.println("재고가 부족합니다"); }
-			else { count1--; }
-			}
+		if( choose == 1 ) {	--count1; }
+		else if( count1 < 0 ) { System.out.println("재고가 부족합니다"); }
 		
-		if( choose == 2 ) {	count2--; }
-		if( count2 < 0 ) { System.out.println("재고가 부족합니다"); }
+		if( choose == 2 ) {	--count2; }
+		else if( count2 < 0 ) { System.out.println("재고가 부족합니다"); }
 		
-		if( choose == 3 ) {	count3--; }
-		if( count3 < 0 ) { System.out.println("재고가 부족합니다"); }
+		if( choose == 3 ) {	--count3; }
+		else if( count3 < 0 ) { System.out.println("재고가 부족합니다"); }
 		
 		if( choose == 4 ) {
 			int price = (1000 * (10-count1)) + (1500 * (10-count2)) + (2000 * (10-count3));
