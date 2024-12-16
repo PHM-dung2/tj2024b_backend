@@ -27,11 +27,11 @@ public class Example1 {
 			System.out.println("> 1. 등록 선택했습니다.");
 			System.out.print("> 전화번호 : "); String num = sc.next();
 			System.out.print("> 인원수 : "); int count = sc.nextInt();
-			if( 전화번호1 == null ) { 전화번호1 = num; 인원수1 = count; }
-			else if( 전화번호2 == null ) { 전화번호2 = num; 인원수2 = count; }
-			else if( 전화번호3 == null ) { 전화번호3 = num; 인원수3 = count; }
+			if( 전화번호1 == null ) { 전화번호1 = num; 인원수1 = count; System.out.println("** 등록성공 **");}
+			else if( 전화번호2 == null ) { 전화번호2 = num; 인원수2 = count; System.out.println("** 등록성공 **");}
+			else if( 전화번호3 == null ) { 전화번호3 = num; 인원수3 = count; System.out.println("** 등록성공 **");}
 			else { System.out.println("** 등록 실패 : 게시물 작성공간이 부족합니다. **"); }
-			System.out.println("** 등록성공 **");
+			
 		} // if end
 		else if( 선택메뉴 == 2 ) {
 			System.out.println("> 2. 출력 선택했습니다.");
