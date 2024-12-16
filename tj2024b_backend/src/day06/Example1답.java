@@ -15,6 +15,7 @@ public class Example1답 {
 		int choose = sc.nextInt();
 		
 		if( choose == 1 ) {
+			System.out.println(">>> 대기명단 등록 >>>");
 			System.out.print("> 전화번호 : "); String phone = sc.next();
 			System.out.print("> 인원수 : "); int count = sc.nextInt();
 			
