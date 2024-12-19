@@ -1,4 +1,7 @@
 package day09;
+
+import java.util.Scanner;
+
 /*
 	자바 과제8 : (식당) 대기번호 발행 프로그램
 	- 문법 : 변수 , 입출력함수 , 연산자 , 제어문(조건문/반복문) , 클래스(멤버변수)/객체 , 배열 , 메소드
@@ -9,10 +12,21 @@ package day09;
 public class Example1 {
 
 	public static void main(String[] args) {
-
+		WaitingService ws = new WaitingService();
+		Waiting[] waits = new Waiting[100];
+		
 		while(true) {
+			System.out.print("1.대기 등록 2.대기 현황 : ");
+			Scanner sc = new Scanner(System.in);
+			int choose = sc.nextInt();
+			if(choose == 1) {
+				ws.waitAdd( sc , waits );
+			}else if(choose == 2) {
+				ws.waitPrint( waits );
+			}
 			
-		}
+			
+		} // w e
 		
 	}
 
