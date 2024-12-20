@@ -6,7 +6,7 @@ public class Join {
 	private String nName;
 	
 	public Join() {};
-	public Join( String id , String pw , String writer) {
+	public Join( String id , String pw , String nName ) {
 		this.id = id;
 		this.pw = pw;
 		this.nName = nName;

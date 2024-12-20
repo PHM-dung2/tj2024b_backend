@@ -13,7 +13,7 @@ public class JoinService {
 		boolean joinState = false;
 		for( int i = 0 ; i < joins.length ; i++ ) {
 			Join sJoin = joins[i];
-			if( joins[i] != null ) {
+			if( sJoin != null ) {
 				if( sJoin.getId().equals(id) ) {
 					System.out.println("중복된 ID입니다.");
 					break;
@@ -40,7 +40,7 @@ public class JoinService {
 		boolean searchID = false;
 		for( int i = 0 ; i < joins.length ; i++ ) {
 			Join join = joins[i];
-			if( joins[i] != null ) {
+			if( join != null ) {
 				if( join.getId().equals(id) && join.getPw().equals(pw) ) {
 					searchID = true;
 					break;
