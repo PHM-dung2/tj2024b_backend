@@ -49,7 +49,7 @@ public class JoinService {
 	} // m end
 		
 	public void boardAdd( Scanner sc , Board[] boards , Board board ) {
-		System.out.println("게시물 등록을 선택하셨습니다.");
+		System.out.println("게시물 등록을 선택하셨습니다. ");
 		System.out.print(">>제목 : ");		String title = sc.next();
 		System.out.print(">>내용 : ");		String content = sc.next();
 											
@@ -60,6 +60,7 @@ public class JoinService {
 			if( boards[i] == null ) {
 				boards[i] = b1;
 				bAddState = true;
+				break;
 			} // if end
 		} // for end
 		
@@ -71,9 +72,11 @@ public class JoinService {
 	public void boardPrint( Board[] boards ) {
 		
 		for( int i = 0 ; i < boards.length ; i++ ) {
-			System.out.printf("제목 : %s 내용 : %s 작성자 : %s\n" , 
-					boards[i].getTitle() , boards[i].getContent() , boards[i].getWriter());
-		}
+			if( boards[i] != null) {
+				System.out.printf("제목 : %s 내용 : %s 작성자 : %s\n" , 
+						boards[i].getTitle() , boards[i].getContent() , boards[i].getWriter());
+			}
+		} // for end
 		
 	} // m end
 	
