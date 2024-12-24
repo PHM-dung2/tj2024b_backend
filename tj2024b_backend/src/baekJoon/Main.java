@@ -6,12 +6,24 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int a = sc.nextInt();
+		int total = sc.nextInt();
+		int tNum = sc.nextInt();
+		int count = 0;
 		int sum = 0;
-		for( int i = 1 ; i <= a ; i++ ) {
-			sum += a;
-		} // for end
-		System.out.println( sum );
+		while(true) {
+			int a = sc.nextInt();
+			int c = sc.nextInt();
+			sum += a * c;
+			count++;
+			if( tNum == count ) { break; }
+		} // w end
+		
+		if( total == sum ) {
+			System.out.println("Yes");
+		}else {
+			System.out.println("No");
+		} // if end
+		
 	}
 	
 }
