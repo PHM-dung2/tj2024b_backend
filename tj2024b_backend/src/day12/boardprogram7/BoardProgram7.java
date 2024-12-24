@@ -17,7 +17,9 @@ public class BoardProgram7 {
 	public static void main(String[] args) {
 //		공통으로 사용되는 저장소 변수
 		MemberDto[] members = new MemberDto[100];
+		BoardDto[] boards = new BoardDto[100];
 		MemberService ms = new MemberService(); // 저장하지 않기 때문에 1개의 객체만 있으면 됨
+		BoardService bs = new BoardService();
 		String loginId = null;
 		
 		while(true) {
@@ -33,9 +35,9 @@ public class BoardProgram7 {
 						System.out.print("1. 등록 2. 출력 3. 로그아웃 ");
 						int choose2 = sc.nextInt();
 						if( choose2 == 1 ) {
-							
+							bs.boardAdd( sc , boards , loginId );
 						}else if( choose2 == 2 ) {
-							
+							bs.boardPrint( boards );
 						}else if( choose2 == 3 ) {
 							loginId = null;
 							break;
@@ -43,6 +45,7 @@ public class BoardProgram7 {
 					} // w end
 				} // if end
 			} // if end
+			
 		} // w end
 		
 	}
