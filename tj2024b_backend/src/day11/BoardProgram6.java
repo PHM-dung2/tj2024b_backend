@@ -16,9 +16,9 @@ public class BoardProgram6 {
 			Scanner sc = new Scanner(System.in);
 			int choose = sc.nextInt();
 			if( choose == 1 ) {
-				bs.boardAdd( sc , boards;)
+				bs.boardAdd( sc , boards);
 			}else if( choose == 2 ) {
-				bs.boardPrint(boards;)
+				bs.boardPrint(boards);
 			}
 			
 			
