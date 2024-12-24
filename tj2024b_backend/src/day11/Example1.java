@@ -32,7 +32,7 @@ public class Example1 {
 			
 		} // w e
 		
-		while(true) {
+		while(board.getWriter() != null) {
 			System.out.print("1.게시물 등록 2.게시물 출력");
 			int choose = sc.nextInt();
 			if(choose == 1) {

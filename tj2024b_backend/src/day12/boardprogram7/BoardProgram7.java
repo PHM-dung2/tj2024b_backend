@@ -21,15 +21,29 @@ public class BoardProgram7 {
 		String loginId = null;
 		
 		while(true) {
-			System.out.println("1.회원가입 2.로그인");
+			System.out.print("1.회원가입 2.로그인 ");
 			Scanner sc = new Scanner(System.in);
 			int choose = sc.nextInt();
 			if( choose == 1 ) {
 				ms.signUp( sc , members );
 			}else if( choose == 2 ) {
 				loginId = ms.logIn( sc , members );
+				if( loginId != null) {
+					while(true) {
+						System.out.print("1. 등록 2. 출력 3. 로그아웃 ");
+						int choose2 = sc.nextInt();
+						if( choose2 == 1 ) {
+							
+						}else if( choose2 == 2 ) {
+							
+						}else if( choose2 == 3 ) {
+							loginId = null;
+							break;
+						} // if end
+					} // w end
+				} // if end
 			} // if end
-		}
+		} // w end
 		
 	}
 }
