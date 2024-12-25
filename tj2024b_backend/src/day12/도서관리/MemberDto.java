@@ -1,13 +1,13 @@
 package day12.도서관리;
 
-public class Join {
+public class MemberDto {
 //	멤버변수
 	private String id;
 	private String pw;
-	private String type ;
+	private int type ;
 //	생성자
-	Join(){}
-	Join( String id , String pw , String type ){
+	MemberDto(){}
+	MemberDto( String id , String pw , int type ){
 		this.id = id;
 		this.pw = pw;
 		this.type = type;
@@ -25,10 +25,10 @@ public class Join {
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
-	public String getType() {
+	public int getType() {
 		return type;
 	}
-	public void setType(String type) {
+	public void setType(int type) {
 		this.type = type;
 	}
 	
