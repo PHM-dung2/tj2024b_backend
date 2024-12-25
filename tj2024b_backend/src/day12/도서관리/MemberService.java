@@ -25,7 +25,7 @@ public class MemberService {
 				members[i] = memberDto;
 				signUpID = members[i].getId();
 				signUpState = true;
-				return;
+				break;
 			}
 		} // for end
 		

@@ -44,9 +44,9 @@ public class RentalService {
 						System.out.println("반납이 완료되었습니다.");
 						bookState = 0;
 						return;
+					}else if( books[i].getId().equals( LogInManager.getLogInId() ) ) {
+						bookState = 1;
 					}
-				}else {
-					bookState = 1;
 				}
 			}else {
 				bookState = 2;
