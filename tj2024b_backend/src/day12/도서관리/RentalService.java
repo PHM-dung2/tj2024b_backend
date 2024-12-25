@@ -33,28 +33,29 @@ public class RentalService {
 		System.out.println("\n===== 도서반납 =====");
 		System.out.print("도서번호 : ");	int bno = scan.nextInt();
 		
-		boolean bookState = true;
+		int bookState = 0;
 		for( int i = 0 ; i < books.length ; i++ ) {
 			if( books[i] != null ) {
-				bookState = false;
 				if( books[i].getReturnDate() != null && i + 1 == bno ) {
 					if( books[i].getId().equals( LogInManager.getLogInId() ) ) {
 //						연체료?
-							books[i].setReturnDate( null );
-							LogInManager.setLogInId( "" );
-							System.out.println("반납이 완료되었습니다.");
-							break;
-						}else {
-							System.out.println("대여하신 도서가 아닙니다.");
-						}
+						books[i].setReturnDate( null );
+						books[i].setId("");
+						System.out.println("반납이 완료되었습니다.");
+						bookState = 0;
+						return;
+					}else {
+						bookState = 2;
+					}
 				}
 			}else {
-				System.out.println("입력한 도서번호에 해당하는 도서가 없습니다.");
+				bookState = 1;
 				break;
 			} // if end
 		} // for end
 		
-		if( bookState ) { System.out.println("대여중인 도서가 아닙니다."); }
+		if( bookState == 1 ) { System.out.println("입력한 도서번호에 해당하는 도서가 없습니다."); }
+		else if( bookState == 2 ) { System.out.println("대여중인 도서가 아닙니다."); }
 	} // m end
 	
 	public static void bookList( MemberDto[] members , BookDto[] books ) {
