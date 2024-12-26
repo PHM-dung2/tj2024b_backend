@@ -25,7 +25,7 @@ public class RentalService {
 			} // if end
 		} // for end
 		
-		if( bookState ) { System.out.println("입력한 도서번호에 해당하는 도서가 없습니다."); }
+		if( bookState ) { System.out.println("해당 도서번호에 도서가 존재하지 않습니다."); }
 		
 	} // m end
 	
@@ -33,23 +33,39 @@ public class RentalService {
 		System.out.println("\n===== 도서반납 =====");
 		System.out.print("도서번호 : ");	int bno = scan.nextInt();
 		
-		boolean bookState = true;
+		if( books[bno-1] != null ) {
+			if( !books[bno-1].getId().equals( LogInManager.getLogInId() ) ) {
+				if( books[bno-1].getReturnDate() != null ) {
+				System.out.println("다른 사람이 대여한 도서입니다.");
+				return;
+				}
+			}else if( !books[bno-1].getId().equals( "" ) ){
+				System.out.println("대여중인 도서입니다.");
+				return;
+			}else {
+				System.out.println("대여중인 도서가 아닙니다.");
+				return;
+			}
+		}else {
+			System.out.println("해당 도서번호에 도서가 존재하지 않습니다.");
+			return;
+		}
+		
 		for( int i = 0 ; i < books.length ; i++ ) {
 			if( books[i] != null ) {
-				if( books[i].getReturnDate() != null && i + 1 == bno ) {
+				if( books[i].getReturnDate() != null ) {
 					if( books[i].getId().equals( LogInManager.getLogInId() ) ) {
-//						연체료?
-						books[i].setReturnDate( null );
-						books[i].setId("");
-						System.out.println("반납이 완료되었습니다.");
-						bookState = false ;
-						return;
+						if( i + 1 == bno ){
+//							연체료?
+							books[i].setReturnDate( null );
+							books[i].setId("");
+							System.out.println("반납이 완료되었습니다.");
+							return;
+						} // if end
 					} // if end
 				} // if end
 			} // if end
 		} // for end
-		
-		if( bookState ) { System.out.println("대여중인 도서가 아닙니다."); }
 	} // m end
 	
 	public static void bookList( MemberDto[] members , BookDto[] books ) {
