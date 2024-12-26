@@ -1,29 +1,25 @@
 package baekJoon;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
 
 public class Main {
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int total = sc.nextInt();
-		int tNum = sc.nextInt();
-		int count = 0;
-		int sum = 0;
-		while(true) {
-			int a = sc.nextInt();
-			int c = sc.nextInt();
-			sum += a * c;
-			count++;
-			if( tNum == count ) { break; }
-		} // w end
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedReader(new OutputStreamWriter(System.in));
+		StringTokenizer st;
+		int count = Integer.parseInt(br.readLine());
+		for( int i = 1 ; i <= count ; i++ ) {
+			st = new StringTokenizer(br.readLine());
+			bw.write((Integer.parseInt(st.nextToken())+Integer.parseInt(st.nextToken()))+"\n");
+		} // for end
 		
-		if( total == sum ) {
-			System.out.println("Yes");
-		}else {
-			System.out.println("No");
-		} // if end
-		
+		bw.close();
 	}
 	
 }
