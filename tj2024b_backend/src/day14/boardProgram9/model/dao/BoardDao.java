@@ -30,8 +30,16 @@ public class BoardDao {
 	
 //	3. 게시물 수정 페이지 함수
 	public Boolean update( int uIndex , BoardDto boardDto  ) {
-		boards.remove(uIndex);
-		boards.add(uIndex, boardDto);
+		if( uIndex > boards.size() -1 ) {
+//			존재하지 않는 인덱스를 요청하면
+			return false;
+		}
+//		수정시엔 같이 써야함
+//		remove 없이 쓸 경우 인덱스번째에 그냥 추가됨
+//		예) [ 1 , 2 ] ==> .add( 1 , 1 ) ==> [ 1 , 1 , 2 ]
+//		boards.remove(uIndex);
+//		boards.add(uIndex, boardDto);
+		boards.set(uIndex, boardDto);
 		return true;
 	} // f end
 	

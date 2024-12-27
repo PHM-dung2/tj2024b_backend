@@ -30,7 +30,7 @@ public class BoardController {
 	
 //	3. 게시물 수정 제어 함수
 	public boolean update( int uIndex , BoardDto boardDto  ) {
-		Boolean result = BoardDao.getIstance().update(boardDto);
+		Boolean result = BoardDao.getIstance().update( uIndex , boardDto);
 		return result;
 	} // f end
 	
