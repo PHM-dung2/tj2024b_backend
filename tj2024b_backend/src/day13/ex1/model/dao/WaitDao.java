@@ -14,9 +14,9 @@ public class WaitDao {
 	
 //	1. 입력
 	public boolean write( WaitDto waitDto ) {
-		for( int i = 0 ; i < waitDB ; i++ ) {
-			if( waitDto[i] == null ) {
-				waitDto[i] = waitDB;
+		for( int i = 0 ; i < waitDB.length ; i++ ) {
+			if( waitDB[i] == null ) {
+				waitDB[i] = waitDto;
 				return true;
 			} // if end
 		} // for end
@@ -25,7 +25,7 @@ public class WaitDao {
 	} // f end
 	
 //	2. 출력
-	public void findAll() {
+	public WaitDto[] findAll() {
 		return waitDB;
 	}
 }
