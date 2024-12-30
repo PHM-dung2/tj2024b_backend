@@ -58,6 +58,7 @@ public class Example2답 {
 			콜라바구니 = 0; 사이다바구니 = 0; 환타바구니 = 0;
 		}
 	
+		sc.close();
 	} // w e
 		
 		

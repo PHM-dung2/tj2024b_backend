@@ -47,6 +47,8 @@ public class boardProgram2 {
 					System.out.println("제목 : " + board3.title + " 내용 : " + board3.content + " 작성자 : " + board3.writer );
 				}
 			} // if end
+			
+			sc.close();
 		} // w e
 		
 	}

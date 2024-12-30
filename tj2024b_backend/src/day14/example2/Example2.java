@@ -34,6 +34,8 @@ public class Example2 {
 			
 			if( choose == 1 ) { ProductView.getInstance().index(); }
 //			else if( choose == 2 ) { OrderView.getInstance().index(); }
+			
+			scan.close();
 		} // w end
 		
 	}

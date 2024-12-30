@@ -7,6 +7,7 @@ public class BoardDto {
 //	1. 멤버변수 , 접근제한자 , 객체 속성
 	private String title;	// 제목	// private은 다른 클래스로부터 접근 차단
 	private String content;	// 내용	// 
+	@SuppressWarnings("unused")
 	private String writer;	// 작성자	// 
 //	2. 생성자 , 객체 생성시 초기화 담당 역할
 //		+ 디폴트생성자 규칙 : 1.클래스명과 동일 2.매개변수와 입수값 타입/개수 일치

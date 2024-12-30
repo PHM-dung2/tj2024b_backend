@@ -56,6 +56,7 @@ public class Example3 {
 				}else { System.out.println("회원정보가 없습니다."); }
 			} // if end
 			
+			sc.close();
 		} // w e
 		
 	}

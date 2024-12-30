@@ -42,6 +42,7 @@ public class Example4 {
 	// 메소드
 	void signup() { // 멤버함수 // 멤버함수
 		myInfo();
+		@SuppressWarnings("unused")
 		Member member = new Member();
 		Member.getName(); // 서로 다른 클래스이면 객체 필요하다.
 	}

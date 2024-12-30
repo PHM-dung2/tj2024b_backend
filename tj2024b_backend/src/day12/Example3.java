@@ -48,6 +48,7 @@ class Student2{
 		studentID = serialNum;	// 증가된 값을 학번 멤버변수에 대입한다.
 	}
 	public static int getSerialNum() {
+		@SuppressWarnings("unused")
 		int i = 10;
 //		return this.serialNum; // 공용변수이기 때문에 this 필요가 없다.
 		return serialNum;
@@ -65,6 +66,7 @@ class Student2{
 
 public class Example3 {
 
+	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 //		예1)
 //		인스턴스 생성

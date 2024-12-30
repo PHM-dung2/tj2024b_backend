@@ -39,6 +39,8 @@ public class Example1 {
 			if( 전화번호2 != null ) { System.out.print(">전화번호 : " + 전화번호2 + " >인원수 : " + 인원수2 + "\n" );	}
 			if( 전화번호3 != null ) { System.out.print(">전화번호 : " + 전화번호3 + " >인원수 : " + 인원수3 + "\n" );	}
 		} // if end 
+		
+		sc.close();
 	} // w e
 		
 		

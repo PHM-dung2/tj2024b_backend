@@ -7,9 +7,41 @@ public class MyDate {
 	private int month;
 	private int year;
 	
+	
+	
 //	+ 생성자
 	
-//	+ 메소드 , getter : 호출 , setter : 저장
+public int getMonth() {
+		return month;
+	}
+
+
+
+	public void setMonth(int month) {
+		this.month = month;
+	}
+
+
+
+	public int getYear() {
+		return year;
+	}
+
+
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+
+
+	public int getDay() {
+		return day;
+	}
+
+
+
+	//	+ 메소드 , getter : 호출 , setter : 저장
 	public void setDay( int day ) {
 		if( month == 2 ) {
 //			2월달이면

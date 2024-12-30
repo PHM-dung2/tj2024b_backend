@@ -49,6 +49,7 @@ public class Example2 {
 			shop1.cart = 0; shop2.cart = 0; shop3.cart = 0;
 		} // if end
 		
+		sc.close();
 	} // w e
 	
 	}

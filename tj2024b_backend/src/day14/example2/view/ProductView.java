@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import day14.example2.controller.ProductController;
-import day14.example2.model.dao.ProductDao;
 import day14.example2.model.dto.ProductDto;
 
 public class ProductView {

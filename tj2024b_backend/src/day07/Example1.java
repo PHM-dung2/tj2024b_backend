@@ -35,6 +35,8 @@ public class Example1 {
 			if( waiting2.phone != null ) {System.out.printf("인원수 %d명 전화번호 : %s\n" , waiting2.count , waiting2.phone);}
 			if( waiting3.phone != null ) {System.out.printf("인원수 %d명 전화번호 : %s\n" , waiting3.count , waiting3.phone);}
 		}
+		
+		sc.close();
 	} // w e
 		
 	}

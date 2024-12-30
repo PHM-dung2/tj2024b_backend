@@ -30,6 +30,8 @@ public class Example1답 {
 			if( phone2 != null ) { System.out.printf("인원수 %d명 , 연락처 : %s \n" , count2 , phone2); }
 			if( phone3 != null ) { System.out.printf("인원수 %d명 , 연락처 : %s \n" , count3 , phone3); }
 		}
+		
+		sc.close();
 	} // w e
 	
 	}

@@ -16,8 +16,6 @@ import java.util.Scanner;
 		4. 선택시 : 현재 장바구니에 담긴 모든 현황을 보여주고 금액 합산을 출력한다.
 			ex) 콜라 1개 , 사이다 2개 , 환타 0개 총금액 : 4000원
 		* 추가 유효성검사 : 만일 재고가 부족하면 "재고가 부족합니다" 라고 출력하시오.
-		
-	
 */
 
 
@@ -52,7 +50,7 @@ public class Example2 {
 			System.out.printf("콜라 %d개 사이다 %d개 환타 %d개 총금액 : %d원\n" , 10-count1 , 10-count2 , 10-count3 , price );
 		}
 	
-		
+		sc.close();
 	} // w e
 		
 		

@@ -49,6 +49,8 @@ public class Example1 {
 				}else { break; }   
 			} // for end
 		} // if end
+		
+		sc.close();
 	} // w e
 		
 	}

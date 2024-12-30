@@ -2,8 +2,6 @@ package day12.boardprogram7;
 
 import java.util.Scanner;
 
-import day07.Board;
-
 public class BoardService {
 	
 //	게시물등록함수
@@ -20,6 +18,8 @@ public class BoardService {
 				break;
 			} // if end
 		} // for end
+		
+		sc.close();
 	} // f end
 	
 	public void boardPrint( BoardDto[] boards ) {

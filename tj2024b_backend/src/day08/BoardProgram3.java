@@ -64,6 +64,8 @@ public class BoardProgram3 {
 					}else { break; }
 				} // for end
 			} // if end
+			
+			sc.close();
 		} // w e
 		
 	}
