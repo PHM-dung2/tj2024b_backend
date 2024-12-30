@@ -24,6 +24,8 @@ public class 오븐시계 {
 		
 		System.out.printf("%d %d\n", tH , tM);
 		
+		sc.close();
+		
 	}
 
 }

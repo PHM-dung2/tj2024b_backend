@@ -22,12 +22,12 @@ public class Example2 { // 클래스 시작
 //				int + long -> long
 //				int + float -> float
 //				float + double -> double
-		byte b1 = 10 ; byte b2 = 20; short s1 = 30; int i1 = 40;
-		float f1 = 3.14f; double d1 = 41.25;
-		int result1 = b1 + b2;
-		int result2 = b1 + s1;
-		float result3 = i1 + f1;
-		double result4 = f1 + d1;
+//		byte b1 = 10 ; byte b2 = 20; short s1 = 30; int i1 = 40;
+//		float f1 = 3.14f; double d1 = 41.25;
+//		int result1 = b1 + b2;
+//		int result2 = b1 + s1;
+//		float result3 = i1 + f1;
+//		double result4 = f1 + d1;
 		
 //		2. 강제 (자료/타입)형 변환 , 명시적 (자료/타입)형 변환 , 캐스팅
 //			- 1. 메모리가 크기가 큰 값 부터 작은 순으로 변환

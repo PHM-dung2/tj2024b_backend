@@ -26,7 +26,7 @@ public class 주사위세개 {
 			System.out.println( max * 100 );
 		}
 		
-
+		sc.close();
 	}
 
 }

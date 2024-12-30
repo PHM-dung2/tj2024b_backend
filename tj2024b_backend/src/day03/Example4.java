@@ -205,6 +205,8 @@ public class Example4 {
 //				if( 번호3 == 공3 ) { 개수++; }
 //				System.out.println("[문제9] 결과 : " + 개수 + "개");
 				
+				sc.close();
+				
 	}
 
 }

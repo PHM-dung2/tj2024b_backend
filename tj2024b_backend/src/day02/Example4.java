@@ -66,6 +66,8 @@ public class Example4 {
 		System.out.println("[9] .nextBoolean() 결과 : " + value7);
 		
 //		+ 오류 : 지정한 함수의 반환타입과 입력한 데이터 허용범위 벗어나면 InputMismatchException 발생
+		
+		scan.close();
 	}
 
 }

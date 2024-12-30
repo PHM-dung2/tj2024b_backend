@@ -63,7 +63,7 @@ public class Example3 {
 		}
 		System.out.println("[나혼자코딩] 학점 : " + grade);
 		
-		
+		sc.close();
 	}
 
 }

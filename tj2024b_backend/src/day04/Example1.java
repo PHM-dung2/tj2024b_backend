@@ -32,18 +32,18 @@ public class Example1 {
 		
 //		[2] 각 월마다의 일수를 정하는 코드 , case문 동시에 사용하기
 		
-		int month = 10;
-		int day;
-		switch( month ) {
-			case 1 : case 3 : case 5 : case 7 : case 8 : case 10 : case 12 :
-				day = 31;
-				break;
-			case 4 : case 6 : case 9 : case 11 :
-				day = 30;
-				break;
-			case 2 : day = 28;
-				break;
-		}
+//		int month = 10;
+//		int day;
+//		switch( month ) {
+//			case 1 : case 3 : case 5 : case 7 : case 8 : case 10 : case 12 :
+//				day = 31;
+//				break;
+//			case 4 : case 6 : case 9 : case 11 :
+//				day = 30;
+//				break;
+//			case 2 : day = 28;
+//				break;
+//		}
 		
 //		[3] '메달' 문자열 에 따른 메세지 출력코드 , case문에 문자열 사용하기
 		String medal = "Gold";
@@ -63,7 +63,7 @@ public class Example1 {
 		}
 		
 //		[4] if는 조건결과의 논리(t/f) 제어 , switch는 조건결과의 값(value case) 제어
-		int score = 80;
+//		int score = 80;
 //			switch( score >= 80 ) { } : 조건문에 논리연산 , 비교연산에 따른 논리결과 케이스가 아니다.
 //			switch( score ) {
 //				case score >= 80 : System.out.println("합격");

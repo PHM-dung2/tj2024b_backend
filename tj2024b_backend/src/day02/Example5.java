@@ -10,7 +10,7 @@ public class Example5 {
 		
 		// [지문1] 국어 , 영어 , 수학 점수를 각 입력받아서 각 변수에 저장하고 총점 과 평균을 계산하여 console탭에 출력하시오.
 		
-		int 국어 , 영어 , 수학 , 총점 , 평균;
+//		int 국어 , 영어 , 수학 , 총점 , 평균;
 		Scanner sc = new Scanner(System.in);
 //		System.out.print("[지문1] 국어 : ");
 //		국어 = sc.nextInt();
@@ -86,6 +86,7 @@ public class Example5 {
 		String 합격여부 = (총점2 >= 150) ? "합격" : "불합격" ;
 		System.out.println("[지문8] 합격여부 : " + 합격여부 );
 		
+		sc.close();
 	}
 
 }

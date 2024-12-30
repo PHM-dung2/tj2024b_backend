@@ -22,6 +22,8 @@ public class 알람시계 {
 		int tH = total / 60;
 		int tM = total % 60;
 		System.out.println(tH + " " + tM);
+		
+		sc.close();
 	
 //		Scanner sc = new Scanner(System.in);
 //		final int ALERTM = -45;
@@ -34,7 +36,7 @@ public class 알람시계 {
 //				h = 23;
 //			}else { h--;}
 //		}
-		System.out.println(h+" "+m);
+//		System.out.println(h+" "+m);
 	}
 
 }

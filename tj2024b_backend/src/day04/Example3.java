@@ -56,8 +56,8 @@ public class Example3 {
 	
 //		[연습문제]
 //		1.
-		int num1 = 10;
-		int num2 = 2;
+//		int num1 = 10;
+//		int num2 = 2;
 		
 //			(1) if-else
 		
