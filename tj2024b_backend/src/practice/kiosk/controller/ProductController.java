@@ -1,4 +1,4 @@
-package example2.kiosk.controller;
+package practice.kiosk.controller;
 
 
 import java.util.ArrayList;
