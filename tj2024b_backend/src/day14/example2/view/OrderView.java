@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import day14.example2.controller.OrderController;
 import day14.example2.controller.ProductController;
+import day14.example2.model.dao.ProductDao;
 import day14.example2.model.dto.OrderDto;
 import day14.example2.model.dto.ProductDto;
 
@@ -36,7 +37,7 @@ public class OrderView {
 //	1. 상품 등록 페이지
 	public void write() {
 		System.out.println("===== 상품 목록 =====");
-		ProductView.getInstance().index();
+		ProductView.getInstance().write();;
 		
 		System.out.println("===== 주문 등록 =====");
 		System.out.print("상품번호 : ");	int pno = scan.nextInt();
@@ -56,8 +57,10 @@ public class OrderView {
 		int sum = 0;
 		
 		for( int i = 0 ; i < result1.size() ; i++ ) {
+			ArrayList<ProductDto> product = ProductDao.getInstance().printAll();
 			OrderDto order = result1.get(i);
-			System.out.println("%d\t");
+			System.out.printf("%d\t%s\t%d\t" ,
+					i , product.get(order.getPno()).getpName() , order.getCount() );
 		} //  for end
 		
 	} // f end
