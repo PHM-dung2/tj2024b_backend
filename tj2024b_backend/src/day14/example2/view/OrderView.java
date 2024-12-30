@@ -36,13 +36,7 @@ public class OrderView {
 //	1. 상품 등록 페이지
 	public void write() {
 		System.out.println("===== 상품 목록 =====");
-		System.out.println("번호\t제품명\t수량");
-		ArrayList<ProductDto> result2 = ProductController.getInstance().printAll();
-		
-		for( int i = 0 ; i < result2.size() ; i++ ) {
-			ProductDto product = result2.get(i);
-			System.out.println();
-		} //  for end
+		ProductView.getInstance().index();
 		
 		System.out.println("===== 주문 등록 =====");
 		System.out.print("상품번호 : ");	int pno = scan.nextInt();

@@ -88,7 +88,7 @@ create table board(
 	bno int auto_increment ,  
     # 게시물번호는 자동번호를 부여하기 위해 auto_increment 사용 , 20억 이상의 게시물번호를 표현하기 위해 bigint 사용,
     btitle varchar(100) not null ,
-    # 게시물제목은 공백을 없애기 위해 not null 사용 , 문자가 최대 100글자까지 간으하도록 사용
+    # 게시물제목은 공백을 없애기 위해 not null 사용 , 문자가 최대 100글자까지 가능하도록 사용
     bcontent.text ,
     # 게시물내용은 공백을 허용하고 , 최대 4GB 까지 대용량 입력 가능하도록 사용.
 	bdate datetime default now() , # 게시물작성일에는 default 기본값에 now() 함수르 사용하면 자동으로 시스템 날짜/시간 삽입된다.
@@ -97,4 +97,6 @@ create table board(
     mno int , # FK필드 # 회원번호FK # 참조할 필드와 동일한 타입으로 선정
     constraint foreign key( mno ) references member( mno ) # board테이블의 mno필드가 member테이블의 mno 필드를 참조한다.
 );
+
+
 
