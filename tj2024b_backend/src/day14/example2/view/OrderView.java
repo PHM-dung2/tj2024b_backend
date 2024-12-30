@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import day14.example2.controller.OrderController;
+import day14.example2.controller.ProductController;
 import day14.example2.model.dto.OrderDto;
+import day14.example2.model.dto.ProductDto;
 
 public class OrderView {
 //	싱글톤
@@ -33,6 +35,15 @@ public class OrderView {
 	
 //	1. 상품 등록 페이지
 	public void write() {
+		System.out.println("===== 상품 목록 =====");
+		System.out.println("번호\t제품명\t수량");
+		ArrayList<ProductDto> result2 = ProductController.getInstance().printAll();
+		
+		for( int i = 0 ; i < result2.size() ; i++ ) {
+			ProductDto product = result2.get(i);
+			System.out.println();
+		} //  for end
+		
 		System.out.println("===== 주문 등록 =====");
 		System.out.print("상품번호 : ");	int pno = scan.nextInt();
 		System.out.print("수량 : ");		int count = scan.nextInt();
@@ -45,12 +56,16 @@ public class OrderView {
 	
 //	2. 상품 출력 페이지
 	public void printAll() {
-		System.out.println("===== 주문 출력 =====");
-		ArrayList<OrderDto> result = ;
+		System.out.println("===== 주문 내역 =====");
+		System.out.println("번호\t제품명\t수량");
+		ArrayList<OrderDto> result1 = OrderController.getInstance().printAll();
+		int sum = 0;
 		
-		for( int i = 0 ; i < result.size() ; i++ ) {
-			
+		for( int i = 0 ; i < result1.size() ; i++ ) {
+			OrderDto order = result1.get(i);
+			System.out.println("%d\t");
 		} //  for end
+		
 	} // f end
 	
 //	3. 상품 수정 페이지

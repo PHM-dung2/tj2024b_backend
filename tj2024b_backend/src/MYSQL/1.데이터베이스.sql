@@ -88,10 +88,8 @@ drop table if exists testtable2;
         long text		문자열표현 , 최대 42억개 글자 , 4GB , 대용량
 	[논리]
 		bool			true or false 표현 , tinyint와 같다.	
-        
-        
-        
 */
+
 
 
 

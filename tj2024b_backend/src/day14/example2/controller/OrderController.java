@@ -22,7 +22,7 @@ public class OrderController {
 	
 //	2. 상품 출력 페이지
 	public ArrayList<OrderDto> printAll() {
-		ArrayList<OrderDto> result = OrderDao.getInstance()
+		ArrayList<OrderDto> result = OrderDao.getInstance().printAll();
 		return result;
 	} // f end
 	

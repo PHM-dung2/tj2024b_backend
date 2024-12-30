@@ -13,7 +13,7 @@ public class OrderDao {
 		return instance;
 	}
 	
-	ArrayList<OrderDto> OrderDB = new ArrayList<>();
+	private ArrayList<OrderDto> OrderDB = new ArrayList<>();
 	
 //	메소드
 //	1. 상품 등록 페이지
