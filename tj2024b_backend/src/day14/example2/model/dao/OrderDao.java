@@ -18,7 +18,13 @@ public class OrderDao {
 //	메소드
 //	1. 상품 등록 페이지
 	public boolean write( OrderDto orderDto ) {
-		OrderDB.add(orderDto);
+		for( int i = 0 ; i < OrderDB.size() ; i++ ) {
+			OrderDto order = OrderDB.get(i);
+			if( order.getPno() == orderDto.getPno() ) {
+				OrderDB.set(i, order);
+				break;
+			}else { OrderDB.add(orderDto); }
+		}
 		return true;
 	} // f end
 	
@@ -28,12 +34,14 @@ public class OrderDao {
 	} // f end
 	
 //	3. 상품 수정 페이지
-	public void update() {
-		
+	public boolean update( int uIndex , OrderDto orderDto ) {
+		OrderDB.set( uIndex , orderDto );
+		return true;
 	} // f end
 	
 //	4. 상품 삭제 페이지
-	public void delete() {
-		
+	public boolean delete( int dIndex ) {
+		OrderDB.remove( dIndex );
+		return true;
 	} // f end
 }

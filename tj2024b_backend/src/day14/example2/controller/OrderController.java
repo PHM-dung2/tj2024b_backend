@@ -2,6 +2,7 @@ package day14.example2.controller;
 
 import java.util.ArrayList;
 
+import day08.Order;
 import day14.example2.model.dao.OrderDao;
 import day14.example2.model.dto.OrderDto;
 
@@ -27,12 +28,14 @@ public class OrderController {
 	} // f end
 	
 //	3. 상품 수정 페이지
-	public void update() {
-		
+	public boolean update( int uIndex , OrderDto orderDto ) {
+		boolean result = OrderDao.getInstance().update( uIndex , orderDto );
+		return result;
 	} // f end
 	
 //	4. 상품 삭제 페이지
-	public void delete() {
-		
+	public boolean delete( int dIndex ) {
+		boolean result = OrderDao.getInstance().delete( dIndex );
+		return result;
 	} // f end
 }

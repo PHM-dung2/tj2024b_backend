@@ -1,7 +1,5 @@
 package day14.example2;
 
-import java.util.Scanner;
-
 import day14.example2.view.ProductView;
 
 /*
@@ -26,18 +24,7 @@ import day14.example2.view.ProductView;
 public class Example2 {
 
 	public static void main(String[] args) {
-		while(true) {
-			System.out.println("===== 카페 키오스크 =====");
-			System.out.print("1.상품 페이지 2.주문 페이지 ");
-			Scanner scan = new Scanner(System.in);
-			int choose = scan.nextInt();
-			
-			if( choose == 1 ) { ProductView.getInstance().index(); }
-//			else if( choose == 2 ) { OrderView.getInstance().index(); }
-			
-			scan.close();
-		} // w end
-		
+		ProductView.getInstance().appStart();
 	}
 	
 }

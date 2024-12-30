@@ -16,10 +16,25 @@ public class ProductView {
 	
 	private Scanner scan = new Scanner(System.in);
 	
+//	0. 키오스크 메인페이지
+	public void appStart() {
+		while(true) {
+			System.out.println("\n===== 카페 키오스크 =====");
+			System.out.print("1.상품 페이지 2.주문 페이지 ");
+			Scanner scan = new Scanner(System.in);
+			int choose = scan.nextInt();
+			
+			if( choose == 1 ) { ProductView.getInstance().index(); }
+			else if( choose == 2 ) { OrderView.getInstance().index(); }
+			
+			scan.close();
+		} // w end
+	} // f end
+	
 //	0. 상품 선택 페이지
 	public void index() {
 		while(true) {
-			System.out.println("===== 상품페이지 =====");
+			System.out.println("\n===== 상품페이지 =====");
 			System.out.print("1.등록 2.출력 3.수정 4.삭제 ");
 			int choose = scan.nextInt();
 			
@@ -27,12 +42,13 @@ public class ProductView {
 			else if( choose == 2 ) { printAll(); }
 			else if( choose == 3 ) { update(); }
 			else if( choose == 4 ) { delete(); }
+			else if( choose == 4 ) { appStart(); }
 		} // w end
 	}
 	
 //	1. 상품 등록 페이지
 	public void write() {
-		System.out.println("===== 상품 등록 =====");
+		System.out.println("\n===== 상품 등록 =====");
 		System.out.print("상품명 : ");	String pName = scan.next();
 		System.out.print("가격 : ");		int price = scan.nextInt();
 		ProductDto productDto = new ProductDto( pName , price );
@@ -46,8 +62,8 @@ public class ProductView {
 	
 //	2. 상품 출력 페이지
 	public void printAll() {
-		System.out.println("===== 상품 출력 =====");
-		System.out.println("상품번호\t상품명\t\t가격 ");
+		System.out.println("\n===== 상품 리스트 =====");
+		System.out.println("상품번호\t상품명\t\t가격(원) ");
 		ArrayList<ProductDto> result = ProductController.getInstance().printAll();
 		
 		for( int i = 0 ; i < result.size() ; i++ ) {
@@ -60,7 +76,7 @@ public class ProductView {
 	
 //	3. 상품 수정 페이지
 	public void update() {
-		System.out.println("===== 상품 수정 =====");
+		System.out.println("\n===== 상품 수정 =====");
 		System.out.print("상품번호 : ");	int uIndex = scan.nextInt();
 		System.out.print("상품명 : ");	String pName = scan.next();
 		System.out.print("가격 : ");		int price = scan.nextInt();
@@ -73,7 +89,7 @@ public class ProductView {
 	
 //	4. 상품 삭제 페이지
 	public void delete() {
-		System.out.println("===== 상품 삭제 =====");
+		System.out.println("\n===== 상품 삭제 =====");
 		System.out.print("상품번호 : ");	int dIndex = scan.nextInt();
 		boolean result = ProductController.getInstance().delete(dIndex);
 		
