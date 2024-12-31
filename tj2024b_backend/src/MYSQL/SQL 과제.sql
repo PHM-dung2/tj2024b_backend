@@ -31,9 +31,13 @@ create table kategorie(
 
 create table orderlist(
 	ono int auto_increment,
-    count tinyint default 0, 
     date time default now(),
-    constraint primary key( ono ),
+    constraint primary key( ono )
+);
+
+create table orderdetale(
+	ono int,
+    constraint foreign key( ono ) references orderlist( ono ),
     kno tinyint,
     constraint foreign key( kno ) references kategorie( kno ),
     pno tinyint,
