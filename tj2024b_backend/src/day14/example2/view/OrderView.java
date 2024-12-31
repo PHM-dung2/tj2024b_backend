@@ -43,21 +43,12 @@ public class OrderView {
 		System.out.print("상품번호 : ");	int pno = scan.nextInt();
 		System.out.print("수량 : ");		int count = scan.nextInt();
 		ArrayList<OrderDto> OrderList = OrderController.getInstance().printAll();
-		ArrayList<ProductDto> ProductList = ProductController.getInstance().printAll();
-		
-		if( ProductList.size() < pno ) {
-			System.out.println("존재하지 않는 상품번호입니다.");
-			return;
-		}
-		if( count < 0 ) { 
-			System.out.println("수량을 입력해주세요.");
-			return; 
-		}
+		if( test(pno, count) ) { return; }
 		
 		for( int i = 0 ; i < OrderList.size() ; i++ ) {
 			if( OrderList.get(i).getPno() == pno ) { 
-				count = OrderList.get(i).getCount() + count; 
-				break;
+				System.out.println("이미 담긴 상품입니다.");
+				return;
 			}
 		} // for end
 		OrderDto orderDto = new OrderDto( pno , count );
@@ -91,6 +82,8 @@ public class OrderView {
 		System.out.println("\n===== 주문 수정 =====");
 		System.out.print("상품번호 : ");	int uIndex = scan.nextInt();
 		System.out.print("수량 : ");		int count = scan.nextInt();
+		if( test(uIndex, count) ) { return; }
+		
 		OrderDto orderDto = new OrderDto( uIndex , count );
 		boolean result = OrderController.getInstance().update( uIndex , orderDto );
 		
@@ -104,9 +97,24 @@ public class OrderView {
 		System.out.println("\n===== 주문 삭제 =====");
 		System.out.print("상품번호 : ");	int dIndex = scan.nextInt();
 		boolean result = OrderController.getInstance().delete( dIndex );
-				
+		if( test(dIndex, 1) ) { return; }
+		
 		if( result ) { System.out.println("주문내역을 삭제했습니다."); }	
 		else { System.out.println("주문내역 삭제 실패"); }
 	} // f end
 	
+//	5. 유효성 검사
+	public boolean test( int pno , int count ) {
+		ArrayList<ProductDto> ProductList = ProductController.getInstance().printAll();
+		
+		if( ProductList.size() <= pno ) {
+			System.out.println("존재하지 않는 상품번호입니다.");
+			return true;
+		}
+		if( count <= 0 ) { 
+			System.out.println("수량을 입력해주세요.");
+			return true; 
+		}
+		return false;
+	} // f end
 }

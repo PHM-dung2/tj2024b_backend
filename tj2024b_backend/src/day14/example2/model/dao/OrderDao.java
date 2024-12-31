@@ -2,7 +2,6 @@ package day14.example2.model.dao;
 
 import java.util.ArrayList;
 
-import day14.example2.controller.OrderController;
 import day14.example2.model.dto.OrderDto;
 
 public class OrderDao {
@@ -18,13 +17,7 @@ public class OrderDao {
 //	메소드
 //	1. 상품 등록 페이지
 	public boolean write( OrderDto orderDto ) {
-		for( int i = 0 ; i < OrderDB.size() ; i++ ) {
-			OrderDto order = OrderDB.get(i);
-			if( order.getPno() == orderDto.getPno() ) {
-				OrderDB.set(i, order);
-				break;
-			}else { OrderDB.add(orderDto); }
-		}
+		OrderDB.add(orderDto);
 		return true;
 	} // f end
 	

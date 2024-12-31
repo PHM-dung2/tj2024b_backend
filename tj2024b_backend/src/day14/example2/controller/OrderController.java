@@ -18,7 +18,7 @@ public class OrderController {
 //	1. 상품 등록 페이지
 	public boolean write( OrderDto orderDto ) {
 		boolean result = OrderDao.getInstance().write(orderDto);
-		return true;
+		return result;
 	} // f end
 	
 //	2. 상품 출력 페이지
