@@ -6,7 +6,7 @@ class C extends A{ }		// 부모 : A		, 자식 : E
 class D extends B{ }		// 부모 : B		, 자식 : 
 class E extends C{ }		// 부모 : C		, 자식 : 
 
-public class example1 {
+public class Example1 {
 	public static void main(String[] args) {
 		
 		B b = new B();	// b클래스의 인스턴스(객체)	B인스턴스 -> A인스턴스 -> Object인스턴스
