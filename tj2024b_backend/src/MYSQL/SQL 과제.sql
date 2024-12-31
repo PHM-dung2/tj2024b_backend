@@ -23,11 +23,11 @@ create table categorie(
 );
 # [5] 제품 테이블
 create table product(
-	pno int auto_increment,			# 제품번호
+	pno int auto_increment,				# 제품번호
     pname varchar(100) not null unique,	# 제품명
     pprice int unsigned default 0,		# 제품가격
     constraint primary key( pno ),		# pk 필드 설정
-    cno int,						# fk 필드 선언(pk필드와 동일한 타입 권장)
+    cno int,							# fk 필드 선언(pk필드와 동일한 타입 권장)
     constraint foreign key( cno ) references categorie( cno ) # fk 필드 설정
 );
 # [6] 주문 테이블
@@ -48,3 +48,5 @@ create table porderdetail(
 );
 # 테이블 간의 관계를 시작화적으로 표현 : ERD 다이어그램
 # 워크벤치에서 [datebase] - [reverse engineer]
+
+drop database kiosk;
