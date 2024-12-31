@@ -36,7 +36,9 @@ create table orderlist(
 );
 
 create table orderdetale(
-	ono int,
+	dno int auto_increment,
+    constraint primary key( dno ),
+    ono int,
     constraint foreign key( ono ) references orderlist( ono ),
     kno tinyint,
     constraint foreign key( kno ) references kategorie( kno ),
