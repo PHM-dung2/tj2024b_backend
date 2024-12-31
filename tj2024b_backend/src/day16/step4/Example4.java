@@ -26,7 +26,7 @@ public class Example4 {
     public static void main(String[] args) {
 
         Car myCar = new Car();
-        // myCar.run();
+//		myCar.run();
         Car yourCar = new Car();
         yourCar.tire = new Tire();
         yourCar.run();
@@ -41,7 +41,7 @@ public class Example4 {
         myCar.run();
         yourCar.run();
 
-        System.out.println( myCar.tire instanceof  KumhoTire  );
+        System.out.println( myCar.tire instanceof KumhoTire );
         if( myCar.tire instanceof Tire ){
             myCar.tire = new HankookTire();
         }

@@ -41,7 +41,7 @@ public class Example3 {
 //		4. 부모 클래스의 인스턴스 생성
 		Parent parent2 = new Parent();
 		parent2.method1();		// Parent method1
-		Child child3 = (Child)parent2;	// 부모타입 --> 자식타입 Fail	 // 태생이 child 아니라서
+//		Child child3 = (Child)parent2;	// 부모타입 --> 자식타입 Fail	 // 태생이 child 아니라서
 		
 //		* 태생 검사
 		if( parent2 instanceof Child ) { // parent2 변수가 가리키는 인스턴스가 child 타입을 참조하고 있어? true or fasle
