@@ -27,7 +27,8 @@ public class Example3 {
 
         Car myCar = new Car();
         // myCar.run();
-        Car yourCar = new Car();
+        @SuppressWarnings("unused")
+		Car yourCar = new Car();
         //yourCar.tire = new Tire(); // 인터페이스는 추상 메소드만을 포함하며 구현 클래스를 통해 구현하므로 객체를 생성하지 못한다.
         //yourCar.run();
 

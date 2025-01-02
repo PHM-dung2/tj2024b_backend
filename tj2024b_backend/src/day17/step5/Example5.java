@@ -1,9 +1,5 @@
 package day17.step5;
 
-import java.net.InterfaceAddress;
-
-import day17.step1.InterfaceTest;
-
 interface InterFaceTest2{
 //	인터페이스의 구성멤버
 //	1. 상수 : 수정이 불가능한 변수
@@ -16,8 +12,10 @@ interface InterFaceTest2{
 //	4. 정적 메소드
 	public static void method3() {}		// 인터페이스에 정적 구현 메소드를 만들 수 있다.
 //	5. private 메소드
+	@SuppressWarnings("unused")
 	private void method4() {}			// 현재 인터페이스에서 사용 가능한 구현 메소드를 만들 수 있다.
 //	6. private 정적 메소드
+	@SuppressWarnings("unused")
 	private static void method5() {};	// 현재 인터페이스에서 사용 가능한 정적 구현 메소드 만들 수 있다.
 	 
 //	+ : 인터페이스는 클래스와 다르게 생성자가 없다. 즉) 인터페이스는 new 인터페이스명(); , 인터페이스는 인스턴스를 만들 수 없다.
@@ -45,5 +43,7 @@ public class Example5 {
 		
 //		[*]	인터페이스타입은 new 할 수 없다. 즉) 인스턴스 생성 불가능
 //		InterFaceTest2 inter = new InterFaceTest2() {};
+		
+	}
 	
 }
