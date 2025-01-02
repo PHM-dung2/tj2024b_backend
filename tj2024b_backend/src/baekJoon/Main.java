@@ -1,29 +1,28 @@
 package baekJoon;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
 public class Main {
+	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		StringTokenizer st;
-		String str;
+		int a = Integer.parseInt(br.readLine());
+		StringTokenizer st = new StringTokenizer( br.readLine() );
+		int b = Integer.parseInt(br.readLine());
+		int count = 0;
 		
-		while( (str = br.readLine()) != null ) {
-			st = new StringTokenizer(str);
-			int a = Integer.parseInt(st.nextToken());
-			int b = Integer.parseInt(st.nextToken());
+		for( int i = 0 ; i < a ; i++ ) {
+			int c = Integer.parseInt(st.nextToken());
+			if( b == c ) { count++; }
+		} // for end
 		
-			bw.write( a+b + "\n" );
-			bw.flush();
-		} // w end
+		System.out.println( count );
 		
-		bw.close();
+		br.close();
 		
 	}
+
 }
