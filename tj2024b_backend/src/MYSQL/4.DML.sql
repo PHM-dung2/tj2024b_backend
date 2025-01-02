@@ -41,3 +41,23 @@ select mno , mname , mcount from table1;
 # 3. 레코드 조회할때 속성값 조건 , [조건절] where 속성명 = 조건값;
 select * from table1 where mname = '유재석';			# manme 속성 값이 '유재석'인 레코드 조회
 select * from table1 where mno = '3';				# mno 속성 값이 3인 레코드;
+
+# [3] update : 레코드의 속성 값 수정
+# 1. 전체 레코드의 속성값 수정 : update 테이블명 set 속성명 = 새로운값
+update table1 set mcount = 0;	
+# 오류 : mysql workbench safe mode 끄기 : 상단메뉴 => [edit] => [prefernces] / 
+set SQL_SAFE_UPDATES = 0; # safe mode 끄기
+set SQL_SAFE_UPDATES = 1; # safe mode 켜기
+# 2. 특정 레코드의 속상값 수정 : update 테이블명 set 속성명 = 새로운값 where [조건절]
+update table1 set mcount = 100 where mname = '유재석'; # mname속성값이 '유재석'인 레코드의 mcount 속성값을 100으로 수정
+# 3. 여러 속성값 수정		 :  update 테이블명 set 속성명1 = 새로운값 , 속성명2 = 새로운값 where [조건절]
+update table1 set mname = '강호동' , mcount = 200 where mno = 3; # mno속성값이 3인 레코드의 mname과 mcount 값 수정한다.
+
+# [4] delete : 레코드 삭제
+# 1. 전체 레코드 삭제 		: delete from 테이블명;
+delete from table1;
+
+# 2. 특정 레코드의 삭제		: delete from 테이블명 where [조건절]
+delete from table1 where mno = 3;
+
+
