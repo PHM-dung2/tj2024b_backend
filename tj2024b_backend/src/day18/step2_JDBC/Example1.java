@@ -19,7 +19,7 @@ public class Example1 {
 	//			mySQL : com.mysql.cj.jdbc.Driver
 	//			oracle : oracle.jdbc.dirver.OracleDriver
 	//		2. db서버와 연동 시도
-			DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb0103" , "root" , "1234");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb0103" , "root" , "1234");
 	//			DriverManager : DB서버와 연동하는 클래스 , import java.
 	//				-> 연동 함수 : .getConnection( "jdbc:mysql://DB서버IP:DB서버PORT/DB명" , "DB서버계정명" , "DB서버비밀번호" )
 	//				-	-> 로컬 : .getConnection( "jdbc:mysql://localhost:3306/DB명" , "root" , "1234" )
