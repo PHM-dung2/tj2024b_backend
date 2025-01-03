@@ -8,20 +8,21 @@ import java.util.StringTokenizer;
 public class Main {
 	
 	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int a = Integer.parseInt(br.readLine());
-		StringTokenizer st = new StringTokenizer( br.readLine() );
-		int b = Integer.parseInt(br.readLine());
-		int count = 0;
 		
-		for( int i = 0 ; i < a ; i++ ) {
-			int c = Integer.parseInt(st.nextToken());
-			if( b == c ) { count++; }
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int n = Integer.parseInt(br.readLine());
+		int[] list = new int[ br.readLine() ];
+		int max = int[0];
+		int min = int[0];
+		
+		for( int i = 0 ; i < n ; i++ ) {
+			if( a > max ) {	max = a; }
+			if( a < min ) { min = a; }
 		} // for end
 		
-		System.out.println( count );
+		System.out.printf("%d %d" , min , max );
 		
-		br.close();
+		
 		
 	}
 
