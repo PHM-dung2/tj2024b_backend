@@ -9,7 +9,7 @@ public class MemberDto { // DTO : 서로 다른 레이어(MVC패턴)들 간의 �
 //		- 오버로딩 : 동일한 메소드명을 여러개 선언 가능 , 전제조건 : 매개변수의 타입, 개수 , 순서
 	
 //	1. 멤버변수/필드/속성 : 객체가 가질 수 있는 고유한 값을 저장하는 속성명
-	private int mid;
+	private String mid;
 	private String mpwd;
 	private String mname;
 	private String mphone;
@@ -17,7 +17,7 @@ public class MemberDto { // DTO : 서로 다른 레이어(MVC패턴)들 간의 �
 	
 //	2. 생성자
 	public MemberDto(){}
-	public MemberDto(int mid, String mpwd, String mname, String mphone, String mdate) {
+	public MemberDto(String mid, String mpwd, String mname, String mphone, String mdate) {
 			super();
 			this.mid = mid;
 			this.mpwd = mpwd;
@@ -27,7 +27,7 @@ public class MemberDto { // DTO : 서로 다른 레이어(MVC패턴)들 간의 �
 		}
 	
 //	+ 회원가입에 적합한 생성자
-	public MemberDto(int mid, String mpwd, String mname, String mphone) {
+	public MemberDto(String mid, String mpwd, String mname, String mphone) {
 		super();
 		this.mid = mid;
 		this.mpwd = mpwd;
@@ -43,10 +43,10 @@ public class MemberDto { // DTO : 서로 다른 레이어(MVC패턴)들 간의 �
 		return "MemberDto [mid=" + mid + ", mpwd=" + mpwd + ", mname=" + mname + ", mphone=" + mphone + ", mdate="
 				+ mdate + "]";
 	}
-	public int getMid() {
+	public String getMid() {
 		return mid;
 	}
-	public void setMid(int mid) {
+	public void setMid(String mid) {
 		this.mid = mid;
 	}
 	public String getMpwd() {
