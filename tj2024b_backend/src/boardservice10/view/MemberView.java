@@ -1,0 +1,11 @@
+package boardservice10.view;
+
+public class MemberView {
+	
+//	+ 싱글톤
+	private MemberView() {}
+	private static MemberView instance = new MemberView();
+	public static MemberView getInstance() { return instance; }
+	
+	
+}

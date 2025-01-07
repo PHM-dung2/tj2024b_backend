@@ -12,4 +12,4 @@ create table user(
     uage int not null,
     constraint primary key( uno )
 );
-
+select * from user;
