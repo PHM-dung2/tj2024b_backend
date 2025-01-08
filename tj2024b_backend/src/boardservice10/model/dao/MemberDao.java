@@ -1,10 +1,13 @@
 package boardservice10.model.dao;
 
+import java.security.KeyStore.ProtectionParameter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import boardservice10.controller.MemberController;
 import boardservice10.model.dto.MemberDto;
 
 public class MemberDao {
@@ -99,6 +102,32 @@ public class MemberDao {
 		return null;
 	} // f end
 	
-
+//	5. 내정보조회 SQL 처리 메소드
+	public MemberDto myInfo( int logInMno ) {
+		try {
+			String sql = "select mid , mname , mphone , mdate from member where mno = ?";
+			PreparedStatement ps = 	conn.prepareStatement(sql);
+				ps.setInt(1, logInMno);
+			ResultSet rs = ps.executeQuery();
+			if( rs.next() ) {
+				MemberDto result = new MemberDto();
+				result.setMid( rs.getString("mid") );
+				result.setMname( rs.getString("mname") );
+				result.setMphone( rs.getString("mphone") );
+				result.setMdate( rs.getString("mdate") );
+				return result;
+			}
+		}catch( SQLException e ) { System.out.println( e ); }
+		return null; // 조회된 정보가 없을때, null 반환
+	} // f end
+	
+//	6. 회원탈퇴 SQL 처리 메소드
+	public void delete( int logInMno ) {
+		try {
+			String sql = "delete from member where mno = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+				ps.setInt(1 , logInMno);
+		}catch( SQLException e ) { System.out.println( e ); }
+	} // f end
 	
 }

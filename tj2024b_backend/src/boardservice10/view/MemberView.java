@@ -15,7 +15,7 @@ public class MemberView {
 	
 	private Scanner scan = new Scanner(System.in);
 	
-//	0. 메인메뉴
+//	0. 로그인메뉴
 	public void run() {
 		
 		while(true) {
@@ -27,6 +27,20 @@ public class MemberView {
 			else if( choose == 3 ) { findID(); }
 			else if( choose == 4 ) { findPWD(); }
 			
+		} // w end
+		
+	} // f end
+	
+//	0. 메인메뉴
+	public void menu() {
+		
+		while(true) {
+			System.out.println("1.내정보조회 2.탈퇴 3.로그아웃");
+			int choose = scan.nextInt();
+			
+			if( choose == 1 ) { myInfo(); }
+			else if( choose == 2 ) { delete(); }
+			else if( choose == 3 ) { logOut(); }
 		} // w end
 		
 	} // f end
@@ -58,7 +72,10 @@ public class MemberView {
 			memberDto.setMpwd(mpwd);
 		boolean result = MemberController.getInstance().logIn( memberDto );
 		
-		if( result ) { System.out.println("로그인 성공"); }
+		if( result ) { 
+			System.out.println("로그인 성공"); 
+			menu();
+		}
 		else { System.out.println("로그인 실패"); }
 	} // f end
 	
@@ -105,10 +122,41 @@ public class MemberView {
 		MemberController.getInstance().logOut();
 		System.out.println("로그아웃 되었습니다.");
 		run();
-	} //  f end
+	} // f end
 	
-
+//	6. 내정보조회
+	public void myInfo() {
+		MemberDto result = MemberController.getInstance().myInfo( );
+		
+		System.out.println("===== 내정보조회 =====");
+		System.out.println("아이디 : " + result.getMid());
+		System.out.println("이름 : " + result.getMname());
+		System.out.println("전화번호 : " + result.getMphone());
+		System.out.println("가입일 : " + result.getMdate());
+//		서브메뉴
+		while(true) {
+			System.out.print("1.회원수정 2.회원탈되 3.뒤로가기 : ");
+			int choose2 = scan.nextInt();
+			if( choose2 == 1 ) {  }
+			else if( choose2 == 2 ) { delete(); }
+			else if( choose2 == 3 ) { break; }
+		}
+		
+	} // f end
 	
-
+//	7. 회원탈퇴 화면 메소드
+	public void delete() {
+		System.out.println("===== 회월탈퇴 =====");
+		System.out.println("정말 회원 탈퇴를 하실건가요?");
+		System.out.print("0.예 1.취소 : "); // 버튼 클릭이 없으므로 키보드 입력으로 처리해야한다.
+		
+		int choose2 = scan.nextInt();
+		if( choose2 == 0 ) { 
+			MemberController.getInstance().delete(); // 탈퇴처리 컨트롤러 요청\
+			logOut();
+		}
+		else {  }
+	} // f end
+	
 	
 }

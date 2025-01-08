@@ -47,6 +47,15 @@ public class MemberController {
 		logInMno = 0;
 	} // f end
 	
-
+//	6. 내정보조회 컨트롤러 메소드
+	public MemberDto myInfo( int logInMno ) {
+		MemberDto result = MemberDao.getInstance().myInfo( logInMno );
+		return result;
+	} // f end
+	
+//	7. 회원탈퇴 컨트롤러 메소드
+	public void delete( int logInMno ) {
+		MemberDao.getInstance().delete( logInMno );
+	} // f end
 	
 }
