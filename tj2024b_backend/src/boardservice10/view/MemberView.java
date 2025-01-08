@@ -49,12 +49,13 @@ public class MemberView {
 	
 //	2. 로그인
 	public void logIn() {
+//		순서 : 1.입력 -> 2.객체화 -> 3.컨트롤러에게 전달하고 응답 결과 받기 -> 4.컨트롤러의 결과에 따른 처리
 		System.out.println("===== 로그인 =====");
 		System.out.print("아이디 : ");		String mid = scan.next();
-		System.out.print("비밀번호 : ");		String mpwd = scan.next();
+		System.out.print("비밀번호 : ");		String mpwd = scan.next(); // document.queryselector
 		MemberDto memberDto = new MemberDto();
-		memberDto.setMid(mid);
-		memberDto.setMpwd(mpwd);
+			memberDto.setMid(mid);
+			memberDto.setMpwd(mpwd);
 		boolean result = MemberController.getInstance().logIn( memberDto );
 		
 		if( result ) { System.out.println("로그인 성공"); }
@@ -99,7 +100,12 @@ public class MemberView {
 		else { System.out.println("동일한 회원정보가 없습니다."); }
 	} // f end
 	
-
+//	5. 로그아웃
+	public void logOut() {
+		MemberController.getInstance().logOut();
+		System.out.println("로그아웃 되었습니다.");
+		run();
+	} //  f end
 	
 
 	

@@ -10,6 +10,10 @@ public class Main {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int[] arr = new int[30];
 		
+		for( int i = 0 ; i < 30 ; i++ ) {
+			arr[i] = i+1;
+		} // for end
+		
 		while(true) {
 			for( int i = 1 ; i <= 30 ; i++ ) {
 				int a = Integer.parseInt(br.readLine());

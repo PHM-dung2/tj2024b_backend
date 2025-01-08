@@ -16,9 +16,18 @@ public class MemberController {
 	} // f end
 	
 //	2. 로그인
+	private int logInMno = 0;
+	public int getLogInMno() { return logInMno; } // BoardController에서 호출할 에정(글쓰기)
+	
 	public boolean logIn( MemberDto memberDto ) {
-		boolean result = MemberDao.getInstance().logIn(memberDto);
-		return result;
+		int result = MemberDao.getInstance().logIn(memberDto);
+//		boolean --> int 변경한 이유 : 로그인 성공한 회원번호를 내부적으로 저장하기 위해
+//		회원번호( 1번 시작하므로 )를 받아서 0이면 없는 회원번호 , 0초과이면 있는 회원번호 // 설계
+		if( result > 0 ) { 
+			logInMno = result; // 로그인 성공시 로그인 저장변수에 로그인 성공한 회원번호 저장
+			return true; 
+		} 
+		else { return false; } 
 	} // f end
 	
 //	3. 아이디찾기
@@ -31,6 +40,11 @@ public class MemberController {
 	public String findPWD( MemberDto memberDto ) {
 		String result = MemberDao.getInstance().findPWD(memberDto);;
 		return result;
+	} // f end
+	
+//	5. 로그아웃 컨트롤러 메소드
+	public void logOut() {
+		logInMno = 0;
 	} // f end
 	
 

@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import boardservice10.controller.MemberController;
 import boardservice10.model.dto.MemberDto;
 
 public class MemberDao {
@@ -44,18 +46,20 @@ public class MemberDao {
 	} // f end
 	
 //	2. 로그인
-	public boolean logIn( MemberDto memberDto ) {
+	public int logIn( MemberDto memberDto ) {
+//		int : SQL로 조회된 회원번호를 반환하기 위해서
 		try {
-			String sql = "select mid , mpwd from member where mid = ? and mpwd = ? ";
+			String sql = "select mno from member where mid = ? and mpwd = ? ";
 			PreparedStatement ps = conn.prepareStatement(sql);
 				ps.setString(1, memberDto.getMid());
 				ps.setString(2, memberDto.getMpwd());
 			ResultSet rs = ps.executeQuery();
 			if( rs.next() ) {
-				return true; 
+				int mno = rs.getInt("mno");
+				return mno; 
 			} // if end
 		}catch( SQLException e ) { System.out.println( e ); }
-		return false;
+		return 0;
 	} // f end
 	
 //	3. 아이디찾기
