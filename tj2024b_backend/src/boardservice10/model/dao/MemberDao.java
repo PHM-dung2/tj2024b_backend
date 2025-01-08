@@ -43,7 +43,22 @@ public class MemberDao {
 		return false;
 	} // f end
 	
-//	2. 아이디찾기
+//	2. 로그인
+	public boolean logIn( MemberDto memberDto ) {
+		try {
+			String sql = "select mid , mpwd from member where mid = ? and mpwd = ? ";
+			PreparedStatement ps = conn.prepareStatement(sql);
+				ps.setString(1, memberDto.getMid());
+				ps.setString(2, memberDto.getMpwd());
+			ResultSet rs = ps.executeQuery();
+			if( rs.next() ) {
+				return true; 
+			} // if end
+		}catch( SQLException e ) { System.out.println( e ); }
+		return false;
+	} // f end
+	
+//	3. 아이디찾기
 	public String findID( MemberDto memberDto ) {
 		try {
 //			[1] SQL 작성		// mname = '유재석' ---> mname = ? : mname는 어떤 값이 들어갈지 정해져 있지 않다. 매개변수
@@ -64,7 +79,7 @@ public class MemberDao {
 		
 	} // f end
 	
-//	3. 비밀번호 찾기
+//	4. 비밀번호 찾기
 	public String findPWD( MemberDto memberDto ) {
 		try {
 			String sql = "select mpwd from member where mid = ? "
@@ -82,19 +97,6 @@ public class MemberDao {
 		return null;
 	} // f end
 	
-//	4. 로그인
-	public boolean logIn( MemberDto memberDto ) {
-		try {
-			String sql = "select mid , mpwd from member where mid = ? and mpwd = ? ";
-			PreparedStatement ps = conn.prepareStatement(sql);
-				ps.setString(1, memberDto.getMid());
-				ps.setString(2, memberDto.getMpwd());
-			ResultSet rs = ps.executeQuery();
-			if( rs.next() ) {
-				return true; 
-			} // if end
-		}catch( SQLException e ) { System.out.println( e ); }
-		return false;
-	} // f end
+
 	
 }

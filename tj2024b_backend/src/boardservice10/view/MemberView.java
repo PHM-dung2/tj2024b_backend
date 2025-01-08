@@ -19,13 +19,13 @@ public class MemberView {
 	public void run() {
 		
 		while(true) {
-			System.out.print("1.회원가입 2.아이디찾기 3.비밀번호찾기 4.로그인 : ");
+			System.out.print("1.회원가입 2.로그인 3.아이디찾기 4.비밀번호찾기  : ");
 			int choose = scan.nextInt();
 			
 			if( choose == 1 ) { signUp(); }
-			else if( choose == 2 ) { findID(); }
-			else if( choose == 3 ) { findPWD(); }
-			else if( choose == 4 ) { logIn(); }
+			else if( choose == 2 ) { logIn(); }
+			else if( choose == 3 ) { findID(); }
+			else if( choose == 4 ) { findPWD(); }
 			
 		} // w end
 		
@@ -47,7 +47,21 @@ public class MemberView {
 		
 	} // f end
 	
-//	2. 아이디찾기
+//	2. 로그인
+	public void logIn() {
+		System.out.println("===== 로그인 =====");
+		System.out.print("아이디 : ");		String mid = scan.next();
+		System.out.print("비밀번호 : ");		String mpwd = scan.next();
+		MemberDto memberDto = new MemberDto();
+		memberDto.setMid(mid);
+		memberDto.setMpwd(mpwd);
+		boolean result = MemberController.getInstance().logIn( memberDto );
+		
+		if( result ) { System.out.println("로그인 성공"); }
+		else { System.out.println("로그인 실패"); }
+	} // f end
+	
+//	3. 아이디찾기
 	public void findID() {
 //		[1] 입력
 		System.out.println("===== 아이디 찾기 =====");
@@ -68,7 +82,7 @@ public class MemberView {
 		else { System.out.println("동일한 회원정보가 없습니다."); }
 	} // f end
 	
-//	3. 비밀번호 찾기
+//	4. 비밀번호 찾기
 	public void findPWD() {
 		System.out.println("===== 비밀번호 찾기 =====");
 		System.out.print("아이디 : ");		String mid = scan.next();
@@ -85,19 +99,7 @@ public class MemberView {
 		else { System.out.println("동일한 회원정보가 없습니다."); }
 	} // f end
 	
-//	4. 로그인
-	public void logIn() {
-		System.out.println("===== 로그인 =====");
-		System.out.print("아이디 : ");		String mid = scan.next();
-		System.out.print("비밀번호 : ");		String mpwd = scan.next();
-		MemberDto memberDto = new MemberDto();
-		memberDto.setMid(mid);
-		memberDto.setMpwd(mpwd);
-		boolean result = MemberController.getInstance().logIn( memberDto );
-		
-		if( result ) { System.out.println("로그인 성공"); }
-		else { System.out.println("로그인 실패"); }
-	} // f end
+
 	
 
 	
