@@ -3,7 +3,6 @@ package boardservice10.view;
 import java.util.Scanner;
 
 import boardservice10.controller.MemberController;
-import boardservice10.model.dao.MemberDao;
 import boardservice10.model.dto.MemberDto;
 
 public class MemberView {
@@ -40,7 +39,7 @@ public class MemberView {
 			
 			if( choose == 1 ) { myInfo(); }
 			else if( choose == 2 ) { delete(); }
-			else if( choose == 3 ) { logOut(); }
+			else if( choose == 3 ) { logOut(); break; }
 		} // w end
 		
 	} // f end
@@ -121,7 +120,6 @@ public class MemberView {
 	public void logOut() {
 		MemberController.getInstance().logOut();
 		System.out.println("로그아웃 되었습니다.");
-		run();
 	} // f end
 	
 //	6. 내정보조회
@@ -138,7 +136,7 @@ public class MemberView {
 			System.out.print("1.회원수정 2.회원탈퇴 3.뒤로가기 : ");
 			int choose2 = scan.nextInt();
 			if( choose2 == 1 ) {  }
-			else if( choose2 == 2 ) { delete(); }
+			else if( choose2 == 2 ) { delete(); break; }
 			else if( choose2 == 3 ) { break; }
 		}
 		
@@ -155,7 +153,6 @@ public class MemberView {
 			MemberController.getInstance().delete(); // 탈퇴처리 컨트롤러 요청\
 			logOut();
 		}
-		else { menu(); }
 	} // f end
 	
 	
