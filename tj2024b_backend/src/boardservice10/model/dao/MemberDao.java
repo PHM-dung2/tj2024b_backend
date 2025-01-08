@@ -5,8 +5,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import boardservice10.controller.MemberController;
 import boardservice10.model.dto.MemberDto;
 
 public class MemberDao {
