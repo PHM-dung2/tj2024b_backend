@@ -15,19 +15,22 @@ public class MemberController {
 		return true;
 	} // f end
 	
-////	2. 로그인
-//	public boolean logIn() {
-//		
-//	} // f end
-//	
-////	3. 아이디찾기
-//	public String searchID() {
-//		
-//	} // f end
-//	
-////	4. 비밀번호 찾기
-//	public String searchPWD() {
-//		
-//	} // f end
+//	2. 아이디찾기
+	public String findID( MemberDto memberDto ) {
+		String result = MemberDao.getInstance().findID(memberDto);
+		return result;
+	} // f end
+	
+//	3. 비밀번호 찾기
+	public String findPWD( MemberDto memberDto ) {
+		String result = MemberDao.getInstance().findPWD(memberDto);;
+		return result;
+	} // f end
+	
+//	4. 로그인
+	public boolean logIn( MemberDto memberDto ) {
+		boolean result = MemberDao.getInstance().logIn(memberDto);
+		return result;
+	} // f end
 	
 }

@@ -34,7 +34,7 @@ public class MemberDto { // DTO : 서로 다른 레이어(MVC패턴)들 간의 �
 		this.mname = mname;
 		this.mphone = mphone;
 	}
-
+	
 	//	3. 메소드 , getter/setter , toString()
 		// 자동완성 : 클래스 { } 안에서 빈칸에 오른쪽 클릭 -> [source] -> [ Generate Constructor ]
 		// 자동완성 : 클래스 { } 안에서 빈칸에 오른쪽 클릭 -> [source] -> [ Generate toString ]
