@@ -126,7 +126,7 @@ public class MemberView {
 	
 //	6. 내정보조회
 	public void myInfo() {
-		MemberDto result = MemberController.getInstance().myInfo( );
+		MemberDto result = MemberController.getInstance().myInfo();
 		
 		System.out.println("===== 내정보조회 =====");
 		System.out.println("아이디 : " + result.getMid());
@@ -135,7 +135,7 @@ public class MemberView {
 		System.out.println("가입일 : " + result.getMdate());
 //		서브메뉴
 		while(true) {
-			System.out.print("1.회원수정 2.회원탈되 3.뒤로가기 : ");
+			System.out.print("1.회원수정 2.회원탈퇴 3.뒤로가기 : ");
 			int choose2 = scan.nextInt();
 			if( choose2 == 1 ) {  }
 			else if( choose2 == 2 ) { delete(); }
@@ -155,7 +155,7 @@ public class MemberView {
 			MemberController.getInstance().delete(); // 탈퇴처리 컨트롤러 요청\
 			logOut();
 		}
-		else {  }
+		else { menu(); }
 	} // f end
 	
 	

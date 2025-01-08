@@ -124,9 +124,10 @@ public class MemberDao {
 //	6. 회원탈퇴 SQL 처리 메소드
 	public void delete( int logInMno ) {
 		try {
-			String sql = "delete from member where mno = ?";
+			String sql = "delete from member where mno = ? ";
 			PreparedStatement ps = conn.prepareStatement(sql);
 				ps.setInt(1 , logInMno);
+			ps.executeUpdate();
 		}catch( SQLException e ) { System.out.println( e ); }
 	} // f end
 	
