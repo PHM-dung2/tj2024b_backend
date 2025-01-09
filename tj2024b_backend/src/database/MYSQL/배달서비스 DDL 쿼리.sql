@@ -139,7 +139,8 @@ create table rating(
 	rno int unsigned auto_increment,
     constraint primary key( rno ),
     rrating int unsigned,
-    mno int unsigned
+    mno int unsigned,
+    constraint foreign key( mno ) references member ( mno ) on update cascade on delete cascade
 );
 -- 별점목록 샘플
 insert into rating(rrating , mno) values(3 , 1);

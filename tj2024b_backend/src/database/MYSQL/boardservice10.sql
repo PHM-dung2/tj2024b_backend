@@ -11,7 +11,7 @@ create table member(
     mpwd varchar(30) not null,
     mname varchar(20) not null,
     mphone varchar(13) not null unique,
-    mdata datetime default now(),
+    mdate datetime default now(),
     constraint primary key( mno )
 ); # table end
 # [1] 회원테이블 샘플 레코드 삽입

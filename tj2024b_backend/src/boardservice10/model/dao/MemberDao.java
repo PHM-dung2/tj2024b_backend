@@ -1,13 +1,11 @@
 package boardservice10.model.dao;
 
-import java.security.KeyStore.ProtectionParameter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import boardservice10.controller.MemberController;
 import boardservice10.model.dto.MemberDto;
 
 public class MemberDao {
@@ -130,5 +128,19 @@ public class MemberDao {
 			ps.executeUpdate();
 		}catch( SQLException e ) { System.out.println( e ); }
 	} // f end
+	
+	public boolean update( MemberDto memberDto , int logInMno ) {
+		try {
+			String sql = "update member set mpwd = ? , mname = ? , mphone = ? where mno = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+				ps.setString(1 , memberDto.getMpwd());
+				ps.setString(2 , memberDto.getMname());
+				ps.setString(3 , memberDto.getMphone());
+				ps.setInt(4 , logInMno);
+			int count = ps.executeUpdate();
+			if( count == 1 ) { return true; }
+		}catch(SQLException e) { System.out.println( e ); }
+		return false;
+	} // 
 	
 }

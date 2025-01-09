@@ -25,7 +25,7 @@ public class MemberController {
 //		회원번호( 1번 시작하므로 )를 받아서 0이면 없는 회원번호 , 0초과이면 있는 회원번호 // 설계
 		if( result > 0 ) { 
 			logInMno = result; // 로그인 성공시 로그인 저장변수에 로그인 성공한 회원번호 저장
-			System.out.println( logInMno);
+			System.out.println( logInMno );
 			return true; 
 		} 
 		else { return false; } 
@@ -58,5 +58,11 @@ public class MemberController {
 	public void delete( ) {
 		MemberDao.getInstance().delete( logInMno );
 	} // f end
+	
+//	8. 회원수정 컨트롤러 메소드
+	public boolean update( MemberDto memberDto ) {
+		boolean result = MemberDao.getInstance().update( memberDto , logInMno);
+		return result;
+	} // 
 	
 }
