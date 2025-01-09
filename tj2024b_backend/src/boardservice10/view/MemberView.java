@@ -60,6 +60,7 @@ public class MemberView {
 		
 		if( result ) { 
 			System.out.println("로그인 성공"); 
+			BoardView.getinstance().index();
 		}
 		else { System.out.println("로그인 실패"); }
 	} // f end
