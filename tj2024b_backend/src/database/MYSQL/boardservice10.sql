@@ -83,3 +83,11 @@ select * from member;
 select * from category;
 select * from board;
 select * from reply;
+
+# [8]
+select b.* , m.mid from board b inner join member m on b.mno = m.mno;
+select b.* , c.cname from board b inner join category c on b.cno = c.cno ;
+# [2개 이상 조인하기]
+select b.* , c.cname , m.mid from board b inner join category c on b.cno = c.cno
+					inner join member m on b.mno = m.mno;
+

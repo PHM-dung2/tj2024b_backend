@@ -22,7 +22,9 @@ public class BoardDao extends Dao {
 		ArrayList<BoardDto> list = new ArrayList<>();
 		
 		try {
-			String sql = "select * from board";
+			String sql = "select b.* , c.cname , m.mid from board b "
+					+ "inner join member m on b.mno = m.mno "
+					+ "inner join category c on b.cno = c.cno";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while( rs.next() ) {
@@ -37,7 +39,9 @@ public class BoardDao extends Dao {
 						rs.getInt("bview"),
 						rs.getString("bdate"),
 						rs.getInt("mno"),
-						rs.getInt("cno")
+						rs.getInt("cno"),
+						rs.getString("mid"),
+						rs.getString("cname")
 						);
 //				2. 생성된 dto(객체)를 리스트에 담기
 				list.add( boardDto );
@@ -46,9 +50,12 @@ public class BoardDao extends Dao {
 		return list;
 	} // f end
 	
+//	2. 개별 게시물 SQL 처리 메소드
 	public BoardDto findById( int bno ) {
 		try {
-			String sql = "select * from board where bno = ?";
+			String sql = "select b.* , c.cname , m.mid from board b "
+					+ "inner join member m on b.mno = m.mno "
+					+ "inner join category c on b.cno = c.cno where bno = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 				ps.setInt( 1 , bno);
 			ResultSet rs = ps.executeQuery();
@@ -60,7 +67,9 @@ public class BoardDao extends Dao {
 						rs.getInt("bview"),
 						rs.getString("bdate"),
 						rs.getInt("mno"),
-						rs.getInt("cno")
+						rs.getInt("cno"),
+						rs.getString("mid"),
+						rs.getString("cname")
 						);
 				return boardDto;
 			}

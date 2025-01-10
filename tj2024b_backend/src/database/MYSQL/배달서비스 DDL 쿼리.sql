@@ -148,4 +148,5 @@ insert into rating(rrating , mno) values(4 , 2);
 insert into rating(rrating , mno) values(5 , 2);
 
 show tables;
--- select * from orderlist;
+select * from entry; 
+select * from entryaddress;

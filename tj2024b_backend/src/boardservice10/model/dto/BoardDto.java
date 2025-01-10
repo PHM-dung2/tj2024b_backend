@@ -12,24 +12,28 @@ public class BoardDto {
 //	++
 //		작성자 회원번호 아닌 작성자의 아이디
 //		카테고리 번호가 아닌 카테고리의 이름
+	private String mid;
+	private String cname;
+	
 //	2. 생성자
 	public BoardDto() {}
-	public BoardDto(int bno, String btitle, String bcontent, int bview, String bdate, int mno, int cno) {
-		super();
-		this.bno = bno;
-		this.btitle = btitle;
-		this.bcontent = bcontent;
-		this.bview = bview;
-		this.bdate = bdate;
-		this.mno = mno;
-		this.cno = cno;
-	}
-	
-//	3. 메소드
-	@Override
+	public BoardDto(int bno, String btitle, String bcontent, int bview, String bdate, int mno, int cno, String mid,
+				String cname) {
+			super();
+			this.bno = bno;
+			this.btitle = btitle;
+			this.bcontent = bcontent;
+			this.bview = bview;
+			this.bdate = bdate;
+			this.mno = mno;
+			this.cno = cno;
+			this.mid = mid;
+			this.cname = cname;
+		}
+@Override
 	public String toString() {
 		return "BoardDto [bno=" + bno + ", btitle=" + btitle + ", bcontent=" + bcontent + ", bview=" + bview
-				+ ", bdate=" + bdate + ", mno=" + mno + ", cno=" + cno + "]";
+				+ ", bdate=" + bdate + ", mno=" + mno + ", cno=" + cno + ", mid=" + mid + ", cname=" + cname + "]";
 	}
 	public int getBno() {
 		return bno;
@@ -72,6 +76,18 @@ public class BoardDto {
 	}
 	public void setCno(int cno) {
 		this.cno = cno;
+	}
+	public String getMid() {
+		return mid;
+	}
+	public void setMid(String mid) {
+		this.mid = mid;
+	}
+	public String getCname() {
+		return cname;
+	}
+	public void setCname(String cname) {
+		this.cname = cname;
 	}
 	
 	

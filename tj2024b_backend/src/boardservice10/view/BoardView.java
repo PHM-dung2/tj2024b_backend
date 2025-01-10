@@ -43,8 +43,8 @@ public class BoardView {
 		for( int i = 0 ; i < result.size() ; i++ ) {
 			BoardDto boardDto = result.get(i);
 			System.out.print( boardDto.getBno() + "\t" );
-			System.out.print( boardDto.getCno() + "\t" );
-			System.out.print( boardDto.getMno() + "\t" );
+			System.out.print( boardDto.getCname() + "\t" );
+			System.out.print( boardDto.getMid() + "\t" );
 			System.out.print( boardDto.getBdate() + "\t" );
 			System.out.print( boardDto.getBtitle() + "\n" );
 		} // for 
@@ -56,7 +56,7 @@ public class BoardView {
 		System.out.print(">> 게시물 번호 ");	int bno = scan.nextInt();
 		BoardDto result = BoardController.getInstance().findById( bno );
 		System.out.println( result.getBtitle() );
-		System.out.println( result.getCno() + "\t" + result.getMno() + "\t" + result.getBview() + "\t" + result.getBdate() );
+		System.out.println( result.getCname() + "\t" + result.getMid() + "\t" + result.getBview() + "\t" + result.getBdate() );
 		System.out.println( result.getBcontent() );
 //			-- 추후에 댓글 출력되는 코드
 		
