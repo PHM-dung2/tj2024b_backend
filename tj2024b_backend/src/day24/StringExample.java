@@ -1,5 +1,7 @@
 package day24;
 
+import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class StringExample {
@@ -77,6 +79,54 @@ public class StringExample {
 		System.out.println( javaData );
 //		유재석
 //		안녕하세요.
+			
+//			8. subString( 시작인덱스 , [끝인덱스] ) :
+//		첫번째 인덱스부터 6번 인덱스 전까지 추출
+		String str9 = "012345-1230123".substring( 0 , 6 );
+		System.out.println( str9 ); // 012345
+		
+//		7번 인덱스부터 (끝인덱스생략)마지막 인덱스까지 추출
+		String str10 = "012345-1230123".substring( 7 ); // 끝인덱스 생략
+		System.out.println( str10 );	// 1230123
+		
+//			9. .split("구분문자") : 
+		String[] str11 = "012345-1230123".split("-");
+		System.out.println( str11[0] );
+		System.out.println( str11[1] );
+		
+//			10. .indexOf("찾을문자열") :
+		int findIndex = "자바 프로그래맹 언어".indexOf( "자바" );
+		System.out.println( findIndex );
+		
+//			11. .contains("찾을문자열") :
+		boolean findBool = "자바 프로그래밍 언어".contains( "자바" );
+		System.out.println( findBool );
+//			[활용] : 문자열 검색
+		
+//			12. getBytes("찾을문자열") :
+		byte[] str12 = "JAVA PROGRAM".getBytes();
+		System.out.println( Arrays.toString( str12 ));
+//		[74, 65, 86, 65, 32, 80, 82, 79, 71, 82, 65, 77]
+//		 	- 영문/일부 특수문자 : 문자1개당 1바이트( 아스키코드 )
+		System.out.println( "ab".getBytes().length ); // 2
+//		 	- 한글 : 문자1개당 2바이트(유니코드) + 1바이트(utf-8) => 3바이트
+		System.out.println( "가나".getBytes().length ); // 6
+//		 	char 2바이트 표현  short insigned +-32,000개 --> short unsigned 65,536개
+//		 	--> char 유니코드로 된 문자 1개 표현
+//		 	[활용] : 인증코드 만들기
+		String code = "";
+		for( int i = 1 ; i<=6 ; i++ ) {
+			System.out.println( new Random() ); // 랜덤(난수) 관련 클래스
+			System.out.println( new Random().nextInt() );			// int타입의 
+			System.out.println( new Random().nextInt(26));			// 0 ~ 25
+			System.out.println( new Random().nextInt(26) + 97 );	// 97 ~ 122
+			System.out.println( (char)(new Random().nextInt(26) + 97) ); ; // int타입의 난수 반환함수
+			
+			code += (char)(new Random().nextInt(26) + 97); // int타입의 난수 반환함수
+			
+			
+		} // for end
+		
 		
 	}
 	
