@@ -17,8 +17,8 @@ public class MemberController {
 			return 1;
 		} // if end
 //		2. 아이디 중복 검사
-		if( memberDto.getMname().length() ) {
-			return 0;
+		if( MemberDao.getInstance().check("mid" , memberDto.getMid()) ) {
+			return 7;
 		} // if end
 //		3. 비밀번호 길이 검사
 		if( memberDto.getMpwd().length() < 5 || memberDto.getMpwd().length() > 30  ) {
@@ -30,8 +30,12 @@ public class MemberController {
 		} // if end
 //		5. 연락처 - 검사 , 길이검사
 		String[] phones = memberDto.getMphone().split("-");
-		if( phones.length == 3 && phones[0] == "010" && memberDto.getMphone().length() == 13 ) {
+		if( phones.length != 3 && phones[0] != "010" && memberDto.getMphone().length() != 13 ) {
 			return 4;
+		} // if end
+//		6. 연락처 중복 검사
+		if( MemberDao.getInstance().check("mphone" , memberDto.getMphone()) ) {
+			return 8;
 		} // if end
 		
 		boolean result = MemberDao.getInstance().signUp( memberDto );

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import boardservice10.controller.BoardController;
 import boardservice10.model.dto.BoardDto;
+import boardservice10.model.dto.CategoryDto;
 
 public class BoardView {
 //	+ 싱글톤
@@ -30,7 +31,7 @@ public class BoardView {
 					break; 
 					}
 			}
-			else if( choose == 3 ) {  }
+			else if( choose == 3 ) { write(); }
 			else if( choose == 4 ) { findById(); }
 		} // w end
 	} // f end
@@ -51,16 +52,90 @@ public class BoardView {
 		
 	} // f end
 	
-//	2. 개별(1개) 게시물 조회 회면
+//	2. 개별(1개) 게시물 조회 화면
 	public void findById() {
 		System.out.print(">> 게시물 번호 ");	int bno = scan.nextInt();
 		BoardDto result = BoardController.getInstance().findById( bno );
-		System.out.println( result.getBtitle() );
+		System.out.println("제목\t카테고리\t아이디\t조회수\t작성일 ");
+		System.out.print( result.getBtitle() + "\t" );
 		System.out.println( result.getCname() + "\t" + result.getMid() + "\t" + result.getBview() + "\t" + result.getBdate() );
+		System.out.println("\n내용");
 		System.out.println( result.getBcontent() );
-//			-- 추후에 댓글 출력되는 코드
 		
-	}
+		while(true) {
+			System.out.print("1.뒤로가기 2.댓글작성(구현x) 3.수정 4.삭제");
+			int choose = scan.nextInt();
+			if( choose == 1) { break; }
+			else if( choose == 2) { }
+			else if( choose == 3) { update(bno); break; }
+			else if( choose == 4) { delete(bno); break; }
+		} // w end
+		
+	} // f end
 	
+//  3. 전체 카테고리 출력
+	public void category() {
+		System.out.println("===== 전체 카테고리 =====");
+		System.out.println("번호\t카테고리");
+		
+		ArrayList<CategoryDto> result = BoardController.getInstance().category();
+		for( int i = 0 ; i < result.size() ; i++ ) {
+			CategoryDto categoryDto = result.get(i);
+			System.out.printf("%d\t%s\n" , 
+					categoryDto.getCno(),
+					categoryDto.getCname()
+					);
+		} // for end
+	} // f end
+	
+//	4. 게시물 쓰기
+	public void write() {
+		System.out.println("===== 게시물 쓰기 =====");
+		category();
+		System.out.print("카테고리 번호 : ");	int cno = scan.nextInt();
+		System.out.print("제목 : ");			String btitle = scan.next();
+		System.out.print("내용 : ");			String bcontent = scan.next();
+		
+		BoardDto boardDto = new BoardDto();
+		boardDto.setCno(cno);
+		boardDto.setBtitle(btitle);
+		boardDto.setBcontent(bcontent);
+		
+		boolean result = BoardController.getInstance().write( boardDto );
+		if( result ) { System.out.println("글쓰기 성공"); }
+		else { System.out.println("글쓰기 실패"); }
+	} // f end
+	
+//  5. 게시물 수정
+	public void update(int bno) {
+		System.out.println("===== 게시물 수정 =====");
+		category();
+		System.out.print("카테고리 번호 : ");	int cno = scan.nextInt();
+		System.out.print("제목 : ");			String btitle = scan.next();
+		System.out.print("내용 : ");			String bcontent = scan.next();
+		
+		BoardDto boardDto = new BoardDto();
+		boardDto.setCno(cno);
+		boardDto.setBtitle(btitle);
+		boardDto.setBcontent(bcontent);
+		boardDto.setBno(bno);
+		
+		boolean result = BoardController.getInstance().update( boardDto );
+		if( result ) { System.out.println("게시물 수정 성공"); }
+		else { System.out.println("작성한 회원만 수정이 가능합니다"); }
+	} // f end
+	
+//	6. 게시물 삭제
+	public void delete(int bno) {
+		System.out.println("===== 게시물 삭제 =====");
+		System.out.println("정말 삭제하시겠습니까?");
+		System.out.print("1.예 2.아니오 ");
+		int choose = scan.nextInt();
+		if( choose == 1 ) { 
+			boolean result = BoardController.getInstance().delete( bno );
+			if( result ) { System.out.println("게시물 삭제 성공"); }
+			else { System.out.println("작성한 회원만 삭제가 가능합니다."); }
+		}
+	} //  f end
 	
 }

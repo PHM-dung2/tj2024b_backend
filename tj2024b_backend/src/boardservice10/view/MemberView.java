@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 import boardservice10.controller.MemberController;
 import boardservice10.model.dto.MemberDto;
-import day07.Board;
 
 public class MemberView {
 	
@@ -44,15 +43,21 @@ public class MemberView {
 		
 		if( result == 1 ) { 
 			System.out.println("[아이디 길이를 5~30 사이로 해주세요.]"); 
-		}else if( result == 2) {
+		}else if( result == 2 ) {
 			System.out.println("[비밀번호 길이를 5~30 사이로 해주세요.]");
-		}else if( result == 3) {
+		}else if( result == 3 ) {
 			System.out.println("[이름 길이를 2~20 사이로 해주세요.]");
-		}else if( result == 4) {
+		}else if( result == 4 ) {
 			System.out.println("[연락처에 010-0000-0000 형식으로 입력해주세요.]");
-		}else if( result == 5) {
+		}else if( result == 5 ) {
 			System.out.println("[회원가입 성공]");
-		}else { System.out.println("[회원가입 실패] + 관리자에게 문의"); }
+		}else if( result == 6 ){ 
+			System.out.println("[회원가입 실패] + 관리자에게 문의"); 
+		}else if( result == 7 ){ 
+			System.out.println("[현재 사용중인 아이디입니다.]"); 
+		}else if( result == 8 ){ 
+			System.out.println("[현재 사용중인 연락처입니다.]"); 
+		}
 		
 	} // f end
 	

@@ -113,6 +113,7 @@ public class MemberDao extends Dao {
 		}catch( SQLException e ) { System.out.println( e ); }
 	} // f end
 	
+//	7. 회원수정 SQL 처리 메소드
 	public boolean update( MemberDto memberDto , int logInMno ) {
 		try {
 			String sql = "update member set mpwd = ? , mname = ? , mphone = ? where mno = ?";
@@ -125,6 +126,31 @@ public class MemberDao extends Dao {
 			if( count == 1 ) { return true; }
 		}catch(SQLException e) { System.out.println( e ); }
 		return false;
-	} // 
+	} // f end
+	
+//	8. 특정한 속성의 중복값 검색
+//		속성명 매개변수
+//		매개변수 : 어떠한 값이 들어올지/대입 정해져 있지 않은 변수
+//		field : 중복을 검사할 데이터의 속성명
+//		value : 중복을 검사할 데이터
+	public boolean check( String field , String value ) {
+		
+//		StringBuilder builder = new StringBuilder();
+//		builder.append(" select * from member where");
+//		builder.append( field );
+//		builder.append( " = " );
+//		builder.append( value );
+//		System.out.println( builder.toString() );
+		
+		try {
+			String sql = "select * from member where " +field+ " =? ";
+			PreparedStatement ps = conn.prepareStatement(sql);
+				ps.setString(1, value);
+			ResultSet rs = ps.executeQuery();
+			if( rs.next() ) { return true; }
+		}catch( SQLException e ) { System.out.println( e ); }
+		
+		return false;
+	} // f end
 	
 }
