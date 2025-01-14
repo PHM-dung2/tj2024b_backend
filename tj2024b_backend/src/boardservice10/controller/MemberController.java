@@ -10,9 +10,33 @@ public class MemberController {
 	public static MemberController getInstance() { return instance; }
 	
 //	1. 회원가입
-	public boolean signUp( MemberDto memberDto ) {
-		MemberDao.getInstance().signUp( memberDto );
-		return true;
+	public int signUp( MemberDto memberDto ) {
+//		* 다양한 유효성검사를 넣을 예정
+//		1. 아이디 길이 검사 : 사용자로부터 입력받은 아이디의 길이가 30초과하면 실패
+		if( memberDto.getMid().length() < 5 || memberDto.getMid().length() > 30 ) {
+			return 1;
+		} // if end
+//		2. 아이디 중복 검사
+		if( memberDto.getMname().length() ) {
+			return 0;
+		} // if end
+//		3. 비밀번호 길이 검사
+		if( memberDto.getMpwd().length() < 5 || memberDto.getMpwd().length() > 30  ) {
+			return 2;
+		} // if end
+//		4. 이름 길이 검사
+		if( memberDto.getMname().length() < 2 || memberDto.getMname().length() > 20 ) {
+			return 3;
+		} // if end
+//		5. 연락처 - 검사 , 길이검사
+		String[] phones = memberDto.getMphone().split("-");
+		if( phones.length == 3 && phones[0] == "010" && memberDto.getMphone().length() == 13 ) {
+			return 4;
+		} // if end
+		
+		boolean result = MemberDao.getInstance().signUp( memberDto );
+		if( result ) { return 5; }
+		else{ return 6; } 
 	} // f end
 	
 //	2. 로그인
