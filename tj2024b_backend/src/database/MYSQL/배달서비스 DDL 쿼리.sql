@@ -53,15 +53,15 @@ create table entry(
 -- 인천광역시 부평구 입점 샘플
 insert into entry (ename, espot, etype, mno ) value("맥도날드", "인천구산DT점", 1, 2);
 insert into entry (ename, espot, etype, mno ) value("맥도날드", "부평중앙점", 1, 2);
-insert into entry (ename, espot, etype, mno ) value("버거킹", "부평시장역점", 1, 2);
+insert into entry (ename, espot, etype, mno ) value("버거킹", "부평시장역점", 0, 2);
 insert into entry (ename, espot, etype, mno ) value("버거킹", "부평역점", 1, 2);
-insert into entry (ename, espot, etype, mno ) value("BHC치킨", "부평점", 1, 2);
+insert into entry (ename, espot, etype, mno ) value("BHC치킨", "부평점", 0, 2);
 insert into entry (ename, espot, etype, mno ) value("BHC치킨", "부평남부점", 1, 2);
 -- 서울특별시 관악구 샘플 목록
 insert into entry (ename, espot, etype, mno ) value("맥도날드", "신림점", 1, 3);
 insert into entry (ename, espot, etype, mno ) value("버거킹", "신림역점", 1, 3);
 insert into entry (ename, espot, etype, mno ) value("버거킹", "서울대입구역점", 1, 3);
-insert into entry (ename, espot, etype, mno ) value("버거킹", "신림미림여고입구점", 1, 3);
+insert into entry (ename, espot, etype, mno ) value("버거킹", "신림미림여고입구점", 0, 3);
 insert into entry (ename, espot, etype, mno ) value("BHC치킨", "신림신원점", 1, 3);
 insert into entry (ename, espot, etype, mno ) value("BHC치킨", "봉천중앙점", 1, 3);
 
@@ -214,3 +214,4 @@ create table rating(
 insert into rating(rrating , mno) values(3 , 1);
 insert into rating(rrating , mno) values(4 , 2);
 insert into rating(rrating , mno) values(5 , 2);
+
