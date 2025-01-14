@@ -54,6 +54,7 @@ public class BoardView {
 	
 //	2. 개별(1개) 게시물 조회 화면
 	public void findById() {
+		
 		System.out.print(">> 게시물 번호 ");	int bno = scan.nextInt();
 		BoardDto result = BoardController.getInstance().findById( bno );
 		System.out.println("제목\t카테고리\t아이디\t조회수\t작성일 ");
@@ -61,14 +62,14 @@ public class BoardView {
 		System.out.println( result.getCname() + "\t" + result.getMid() + "\t" + result.getBview() + "\t" + result.getBdate() );
 		System.out.println("\n내용");
 		System.out.println( result.getBcontent() );
-		
+			
 		while(true) {
-			System.out.print("1.뒤로가기 2.댓글작성(구현x) 3.수정 4.삭제");
+			System.out.print("1.뒤로가기 2.댓글작성(구현x) 3.수정 4.삭제 ");
 			int choose = scan.nextInt();
 			if( choose == 1) { break; }
 			else if( choose == 2) { }
-			else if( choose == 3) { update(bno); break; }
-			else if( choose == 4) { delete(bno); break; }
+			else if( choose == 3) { update(bno); }
+			else if( choose == 4) { delete(bno); }
 		} // w end
 		
 	} // f end
