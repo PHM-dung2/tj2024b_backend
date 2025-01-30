@@ -15,12 +15,15 @@ public class b3052 {
 		} // for end
 		
 		int count = 0 ;
+		boolean state = true;
 		for( int i = 0 ; i < arr.length ; i++ ) {
-			for( int j = 0 ; j < 42 ; j++ ) {
+			for( int j = 0 ; j < arr.length ; j++ ) {
 				int a = arr[i];
 				int b = arr[j];
-				if( a != b ) { count++; }
+				
+				if( i != j && a == b ) { state = false; }
 			} // for end
+			if( state ) { count++; }
 		} // for end
 		System.out.println(count);
 		
